@@ -1,0 +1,100 @@
+if (document.getElementById("taskList")) {
+				tasks.getTasksOrderAJAX(pageData._id).then((data, err) => {
+					Sortable.create(document.getElementById("taskList"), {
+						group: "localStorage-example",
+						store: {
+							/**
+							* Get the order of elements. Called once during initialization.
+							* @param   {Sortable}  sortable
+							* @returns {Array}
+							*/
+							get: function (sortable) {
+								var order = data.order;
+								return order
+
+							},
+
+							/**
+							* Save the order of elements. Called onEnd (when the item is dropped).
+							* @param {Sortable}  sortable
+							*/
+							set: function (sortable) {
+								var order = sortable.toArray();
+								tasks.setTasksOrderAJAX(pageData._id, order);
+							},
+							onSort: function (/**Event*/evt) {
+								console.log("waka waka");
+								var itemEl = evt.item,
+									taskID = evt.item.getAttribute('data-id');  // dragged HTMLElement
+								task.setTaskOrderByIDAJAX(pageData._id, taskID, evt.newIndex);
+							},
+							onAdd: function (/**Event*/evt) {
+								console.log("waka waka");
+								var itemEl = evt.item,
+									taskID = evt.item.getAttribute('data-id');  // dragged HTMLElement
+								task.setTaskOrderByIDAJAX(pageData._id, taskID, evt.newIndex);
+							}
+						},
+						onEnd: function (/**Event*/evt) {
+							var itemEl = evt.item,
+								taskID = evt.item.getAttribute('data-id');  // dragged HTMLElement
+							evt.to;    // target list
+							evt.from;  // previous list
+							evt.oldIndex;  // element's old index within old parent
+							evt.newIndex;  // element's new index within new parent
+							task.setTaskOrderByIDAJAX(pageData._id, taskID, evt.newIndex);
+
+						},
+						onMove: function (/**Event*/evt, /**Event*/originalEvent) {
+							// Example: http://jsbin.com/tuyafe/1/edit?js,output
+							evt.dragged; // dragged HTMLElement
+							evt.draggedRect; // TextRectangle {left, top, right и bottom}
+							evt.related; // HTMLElement on which have guided
+							evt.relatedRect; // TextRectangle
+							originalEvent.clientY; // mouse position
+							// return false; — for cancel
+						},
+						onSort: function (/**Event*/evt) {
+							var itemEl = evt.item,
+								taskID = evt.item.getAttribute('data-id');  // dragged HTMLElement
+							task.setTaskOrderByIDAJAX(pageData._id, taskID, evt.newIndex);
+						},
+						onAdd: function (/**Event*/evt) {
+							var itemEl = evt.item,
+								taskID = evt.item.getAttribute('data-id');  // dragged HTMLElement
+							task.setTaskOrderByIDAJAX(pageData._id, taskID, evt.newIndex);
+						}
+					})
+				});
+function getTaskOrderByAJAX(requestID, taskID) {
+        return $.ajax({
+            method: "GET",
+            url: /api/requests/${requestID}/tasks/${taskID}/order
+        })
+    }
+
+    function setTaskOrderByIDAJAX(requestID, taskID, index) {
+        return $.ajax({
+            method: "PUT",
+            url: /api/requests/${requestID}/tasks/${taskID}/order,
+            data: {
+                index: index
+            }
+        })
+    }
+function getTasksOrderAJAX(requestID) {
+        return $.ajax({
+            method: "GET",
+            url: /api/requests/${requestID}/tasks
+        })
+    }
+    
+    function setTasksOrderAJAX(requestID, order) {
+        return $.ajax({
+            method: "PUT",
+            url: /api/requests/${requestID}/tasks,
+            data: {
+                order: order
+            }
+        })
+    }

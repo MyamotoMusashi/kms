@@ -1,0 +1,1136 @@
+[
+	{
+		"id" : 3,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100603",
+		"issue" : "an error occurred logging you in the web site.\ncould not verify your identity.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 3,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 5,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100608",
+		"issue" : "stuck at microsoft word online loading screen",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 5,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 6,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100616",
+		"issue" : "all files of <folder_name> got deleted",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 6,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 7,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100617",
+		"issue" : "sub folders are not synced",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 7,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 8,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100618",
+		"issue" : "files are not syncing",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 8,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 12,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100625",
+		"issue" : "email address field not populating",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 12,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 14,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100629",
+		"issue" : "account expired due to expired credit card on account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 14,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 19,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100637",
+		"issue" : "your domain credentials are not accessible. your admin requires your computer to be domain joined in order to access syncplicity. please restart your computer, if the problem persists then contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 19,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 20,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100638",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 13,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 23,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100643",
+		"issue" : "unable to upload file to cloud",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 9,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 25,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100654",
+		"issue" : "not connected to the disk",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-16 00:00:00",
+		"issue_id" : 25,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 26,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100658",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-16 00:00:00",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 42,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100734",
+		"issue" : "an unknown error occured while uploading this file. please contact support",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-18 17:48:14",
+		"issue_id" : 31,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 48,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100755",
+		"issue" : "password reset",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:03:53",
+		"issue_id" : 28,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 49,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100756",
+		"issue" : "storage space doesn't change even after permanently deleting files",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:07:05",
+		"issue_id" : 36,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 50,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100758",
+		"issue" : "delete <account_name>",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:11:49",
+		"issue_id" : 15,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 51,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100760",
+		"issue" : "files are not syncing",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:14:26",
+		"issue_id" : 8,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 52,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100762",
+		"issue" : "files are not syncing",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:16:12",
+		"issue_id" : 8,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 54,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100786",
+		"issue" : "shared links file not received",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:29:12",
+		"issue_id" : 38,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 56,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100789",
+		"issue" : "outlook add-in missing",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 12:48:26",
+		"issue_id" : 39,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 57,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100770",
+		"issue" : "increase seats",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 13:09:36",
+		"issue_id" : 40,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 58,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100765",
+		"issue" : "create account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-21 13:22:29",
+		"issue_id" : 41,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 60,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100798",
+		"issue" : "create account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-22 13:55:22",
+		"issue_id" : 41,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 62,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100806",
+		"issue" : "sorry, but we have trouble signing you in. aadsts900235: saml authenthication request's requestedauthenticationcontext comparison value must be 'exact'. received value: 'maximum'",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-22 14:50:59",
+		"issue_id" : 42,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 63,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100807",
+		"issue" : "your domain credentials are not accessible. your admin requires your computer to be domain joined in order to access syncplicity. please restart your computer, if the problem persists then contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-22 14:53:08",
+		"issue_id" : 19,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 64,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100809",
+		"issue" : "your domain credentials are not accessible. your admin requires your computer to be domain joined in order to access syncplicity. please restart your computer, if the problem persists then contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-22 14:55:19",
+		"issue_id" : 19,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 66,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100831",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 11:27:37",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 69,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100839",
+		"issue" : "restore deleted files",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 11:39:36",
+		"issue_id" : 45,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 70,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100846",
+		"issue" : "the remote server retruned an error: (418) too many password failures..",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 11:43:44",
+		"issue_id" : 46,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 72,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100854",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 13:44:43",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 74,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100857",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 13:45:38",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 75,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100856",
+		"issue" : "password reset",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-23 13:49:20",
+		"issue_id" : 28,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 77,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101014",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 15:23:36",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 78,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101013",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 15:24:30",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 79,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101009",
+		"issue" : "you need permission to perform this action",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 15:26:21",
+		"issue_id" : 48,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 80,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101009",
+		"issue" : "email address <email address> is already in use.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 15:28:36",
+		"issue_id" : 49,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 81,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101003",
+		"issue" : "remote install of outlook plugin",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 15:30:34",
+		"issue_id" : 50,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 82,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101016",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 16:17:02",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 83,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101017",
+		"issue" : "delete <account_name>",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-28 16:52:28",
+		"issue_id" : 15,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 85,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101019",
+		"issue" : "move data from cloud to on-premise",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-29 11:20:34",
+		"issue_id" : 52,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 87,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101021",
+		"issue" : "activate account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-29 11:27:54",
+		"issue_id" : 54,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 89,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101035",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-30 12:51:04",
+		"issue_id" : 4,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 90,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101036",
+		"issue" : "wrong username and password",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-30 12:55:53",
+		"issue_id" : 56,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 91,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100838",
+		"issue" : "you have exceeded the available storage quota in your syncplicity account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-30 13:11:30",
+		"issue_id" : 44,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 92,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101085",
+		"issue" : "change email address",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-30 16:31:06",
+		"issue_id" : 57,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 93,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101119",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 15:59:41",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 94,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101118",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:00:25",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 96,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101116",
+		"issue" : "share folder externally",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:09:51",
+		"issue_id" : 59,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 97,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101115",
+		"issue" : "share file externally",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:11:17",
+		"issue_id" : 32,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 98,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101114",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:21:25",
+		"issue_id" : 4,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 99,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101111",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:24:04",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 100,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101107",
+		"issue" : "your domain credentials are not accessible. your admin requires your computer to be domain joined in order to access syncplicity. please restart your computer, if the problem persists then contact your administrator.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:27:18",
+		"issue_id" : 19,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 101,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101105",
+		"issue" : "install and renew certificate on storage connector",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:32:12",
+		"issue_id" : 60,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 102,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101104",
+		"issue" : "clean up deleted files",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:35:21",
+		"issue_id" : 61,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 103,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101103",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:36:10",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 104,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101102",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:38:16",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 105,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101101",
+		"issue" : "missing downloads button",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:41:33",
+		"issue_id" : 62,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 106,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101099",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 16:43:19",
+		"issue_id" : 13,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 109,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101120",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 18:07:58",
+		"issue_id" : 13,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 110,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101122",
+		"issue" : "email address <email address> is already in use.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 18:10:48",
+		"issue_id" : 49,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 111,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101123",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 18:11:59",
+		"issue_id" : 26,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 112,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101124",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-10-31 18:23:50",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 113,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101125",
+		"issue" : "update account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:26:16",
+		"issue_id" : 64,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 114,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101125",
+		"issue" : "access denied. you don have permission to access this page",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:28:16",
+		"issue_id" : 65,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 115,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101127",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:28:53",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 116,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101129",
+		"issue" : "automatic notifications when sharing",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:30:46",
+		"issue_id" : 66,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 117,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101130",
+		"issue" : "capture snapshots into pdf",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:32:45",
+		"issue_id" : 67,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 118,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101131",
+		"issue" : "delete <account_name>",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:35:10",
+		"issue_id" : 15,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 119,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101132",
+		"issue" : "email address <email address> is already in use.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:36:16",
+		"issue_id" : 49,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 120,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101133",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:39:49",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 121,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101134",
+		"issue" : "https://api.syncplicity.com/sync/newsfeed.svc/:syncpointid  returns 304 not modified",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:43:18",
+		"issue_id" : 68,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 122,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101135",
+		"issue" : "https://api.syncplicity.com/sync/newsfeed.svc/:syncpointid  returns 304 not modified",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:51:36",
+		"issue_id" : 68,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 123,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101136",
+		"issue" : "purge data after contract deletion",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 11:57:59",
+		"issue_id" : 69,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 124,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101138",
+		"issue" : "is not allowed to receive shares from the owner of this folder.",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 12:04:44",
+		"issue_id" : 71,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 125,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101140",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 12:05:15",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 126,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101141",
+		"issue" : "retention period policy 0 days how long to permanently delete all data",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 12:07:36",
+		"issue_id" : 72,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 127,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101143",
+		"issue" : "create account",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 13:46:02",
+		"issue_id" : 41,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 128,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101147",
+		"issue" : "convert account type",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 16:39:41",
+		"issue_id" : 18,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 129,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100670",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 17:22:27",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 130,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101150",
+		"issue" : "to be determined",
+		"resolution" : "pending resolution",
+		"createdAt" : "2019-11-01 17:23:08",
+		"issue_id" : 0,
+		"resolution_id" : 0
+	},
+	{
+		"id" : 1,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100601",
+		"issue" : "add a new group with ad sync configuration",
+		"resolution" : "use ad synctool guide",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 1,
+		"resolution_id" : 1
+	},
+	{
+		"id" : 2,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100602",
+		"issue" : "disable converting folders in syncdrive for a specific tenant",
+		"resolution" : "dani to disable the flags from his admin panel",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 2,
+		"resolution_id" : 2
+	},
+	{
+		"id" : 4,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100605",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 21,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100641",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 29,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100673",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 33,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100682",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 34,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100709",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 35,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100710",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 36,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100725",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-18 00:00:00",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 41,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100732",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-18 17:27:14",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 45,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100740",
+		"issue" : "your domain credentials are not accessible. your admin requires your computer to be domain joined in order to access syncplicity. please restart your computer, if the problem persists then contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-18 18:01:48",
+		"issue_id" : 19,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 55,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100787",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-21 12:44:31",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 65,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100830",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "upgrade to the lowest supported syncplicity version",
+		"createdAt" : "2019-10-23 11:26:06",
+		"issue_id" : 4,
+		"resolution_id" : 4
+	},
+	{
+		"id" : 15,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100630",
+		"issue" : "delete <account_name>",
+		"resolution" : "user to cancel his account from my.syncplicity.com or support from syncplicity support tools",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 15,
+		"resolution_id" : 9
+	},
+	{
+		"id" : 16,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100631",
+		"issue" : "delete <account_name>",
+		"resolution" : "user to cancel his account from my.syncplicity.com or support from syncplicity support tools",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 15,
+		"resolution_id" : 9
+	},
+	{
+		"id" : 27,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100670",
+		"issue" : "delete <account_name>",
+		"resolution" : "user to cancel his account from my.syncplicity.com or support from syncplicity support tools",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 15,
+		"resolution_id" : 9
+	},
+	{
+		"id" : 30,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100676",
+		"issue" : "delete <account_name>",
+		"resolution" : "user to cancel his account from my.syncplicity.com or support from syncplicity support tools",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 15,
+		"resolution_id" : 9
+	},
+	{
+		"id" : 28,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100672",
+		"issue" : "unable to  connect to <domain>.syncplicity.com",
+		"resolution" : "domain is blacklisted",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 27,
+		"resolution_id" : 10
+	},
+	{
+		"id" : 31,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100678",
+		"issue" : "password reset",
+		"resolution" : "generate link for password reset and sent it to the customer",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 28,
+		"resolution_id" : 11
+	},
+	{
+		"id" : 32,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100679",
+		"issue" : "computer name already exists in account",
+		"resolution" : "rename the device from account > devices > click on manage next to device name",
+		"createdAt" : "2019-10-17 00:00:00",
+		"issue_id" : 29,
+		"resolution_id" : 12
+	},
+	{
+		"id" : 10,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100621",
+		"issue" : "validating email addresses took longer than expected. please try again or reload the page.",
+		"resolution" : "syncplicity back-end issue",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 10,
+		"resolution_id" : 13
+	},
+	{
+		"id" : 11,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100622",
+		"issue" : "not able to share folder",
+		"resolution" : "syncplicity back-end issue",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 11,
+		"resolution_id" : 13
+	},
+	{
+		"id" : 71,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100853",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "syncplicity back-end issue",
+		"createdAt" : "2019-10-23 13:17:08",
+		"issue_id" : 26,
+		"resolution_id" : 13
+	},
+	{
+		"id" : 18,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100635",
+		"issue" : "convert account type",
+		"resolution" : "user to cancel his account from my.syncplicity.com or support from syncplicity support tools and new account to be created by the user",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 18,
+		"resolution_id" : 14
+	},
+	{
+		"id" : 24,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100651",
+		"issue" : "admin button missing",
+		"resolution" : "wrong account used",
+		"createdAt" : "2019-10-16 00:00:00",
+		"issue_id" : 24,
+		"resolution_id" : 15
+	},
+	{
+		"id" : 37,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100726",
+		"issue" : "how to use the mobile client",
+		"resolution" : "for general information regarding installing and basic use of mobile apps we have our docs portal should be a good start:\nhttps://docs.axway.com/bundle/syncplicity/page/mobile.html",
+		"createdAt" : "2019-10-18 00:00:00",
+		"issue_id" : 30,
+		"resolution_id" : 16
+	},
+	{
+		"id" : 47,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100754",
+		"issue" : "can't reach this page",
+		"resolution" : "customer it department resolved the issue. it seemed dns related",
+		"createdAt" : "2019-10-21 12:00:49",
+		"issue_id" : 35,
+		"resolution_id" : 18
+	},
+	{
+		"id" : 17,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100632",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "use the beta version of mac client 6.1 for os catalina support",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 13,
+		"resolution_id" : 19
+	},
+	{
+		"id" : 95,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101117",
+		"issue" : "mac os catalina support eta",
+		"resolution" : "use the beta version of mac client 6.1 for os catalina support",
+		"createdAt" : "2019-10-31 16:06:47",
+		"issue_id" : 58,
+		"resolution_id" : 19
+	},
+	{
+		"id" : 107,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101097",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "use the beta version of mac client 6.1 for os catalina support",
+		"createdAt" : "2019-10-31 16:45:04",
+		"issue_id" : 13,
+		"resolution_id" : 19
+	},
+	{
+		"id" : 9,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100619",
+		"issue" : "unable to upload file to cloud",
+		"resolution" : "resolved by customer it team",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 9,
+		"resolution_id" : 21
+	},
+	{
+		"id" : 59,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100795",
+		"issue" : "your administrator has restricted access to your syncplicity account from this device. please contact your administrator.",
+		"resolution" : "resolved by customer it team",
+		"createdAt" : "2019-10-21 17:43:21",
+		"issue_id" : 4,
+		"resolution_id" : 21
+	},
+	{
+		"id" : 73,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100855",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "resolved by customer it team",
+		"createdAt" : "2019-10-23 13:45:05",
+		"issue_id" : 26,
+		"resolution_id" : 21
+	},
+	{
+		"id" : 38,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100731",
+		"issue" : "we apologize for the inconvenience but our website has encountered an error. an error report has been generated and sent to our operation's team. if you see this problem repeatedly or need immediate assistance, please register a complaint with our support department.",
+		"resolution" : "unknown",
+		"createdAt" : "2019-10-18 00:00:00",
+		"issue_id" : 26,
+		"resolution_id" : 22
+	},
+	{
+		"id" : 43,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100735",
+		"issue" : "share file externally",
+		"resolution" : "your syncplicity account has been configured to restrict sharing folders to recipient(s) not in your tenant. please contact your it team who manages the syncplicity enterprise account for your company and request to change the sharing policy.",
+		"createdAt" : "2019-10-18 17:52:36",
+		"issue_id" : 32,
+		"resolution_id" : 23
+	},
+	{
+		"id" : 44,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100738",
+		"issue" : "recover a deleted folder in a pending off boarding user profile",
+		"resolution" : "yes, it can be restored via the website if the folder is not permanently deleted and if the defined period within the deleted user retention policy hasn't expired yet.",
+		"createdAt" : "2019-10-18 17:58:55",
+		"issue_id" : 33,
+		"resolution_id" : 24
+	},
+	{
+		"id" : 53,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100764",
+		"issue" : "missing shared folder",
+		"resolution" : "please contact your it team who manages the syncplicity enterprise account for your company and request to transfer the folder ownership to you or other active sharing participants so you can continue to access the content of the shared folder",
+		"createdAt" : "2019-10-21 12:18:40",
+		"issue_id" : 37,
+		"resolution_id" : 25
+	},
+	{
+		"id" : 61,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100805",
+		"issue" : "sorry, but we have trouble signing you in. aadsts900235: saml authenthication request's requestedauthenticationcontext comparison value must be 'exact'. received value: 'maximum'",
+		"resolution" : "removed unused devices from account",
+		"createdAt" : "2019-10-22 14:40:12",
+		"issue_id" : 42,
+		"resolution_id" : 26
+	},
+	{
+		"id" : 67,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100833",
+		"issue" : "revert off boarding",
+		"resolution" : "recreate your account.an admin can reassign the folders you had to your new account thanks to the offboarding period. they should navigate to your old account that is in pending offboarding and manage user offboarding reassigning all your folders to your new account.",
+		"createdAt" : "2019-10-23 11:33:38",
+		"issue_id" : 43,
+		"resolution_id" : 27
+	},
+	{
+		"id" : 84,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101018",
+		"issue" : ".pst files are missing",
+		"resolution" : "according to your company policy, files like .pst are excluded from syncing. they are excluded because they are continuously changed and this would cause a high load to your device and the local network.",
+		"createdAt" : "2019-10-28 18:25:55",
+		"issue_id" : 51,
+		"resolution_id" : 28
+	},
+	{
+		"id" : 86,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101020",
+		"issue" : "mobile pin reset",
+		"resolution" : "if you would want to set a new pin, you would need to uninstall and then re-install the mobile client",
+		"createdAt" : "2019-10-29 11:24:52",
+		"issue_id" : 53,
+		"resolution_id" : 29
+	},
+	{
+		"id" : 88,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101033",
+		"issue" : "access denied",
+		"resolution" : "account unblocked by syncplicity support",
+		"createdAt" : "2019-10-29 11:34:53",
+		"issue_id" : 55,
+		"resolution_id" : 30
+	},
+	{
+		"id" : 108,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/101096",
+		"issue" : "sync desktop, documents, favorites, pictures from two different computers without mixing them",
+		"resolution" : "desktop, documents, favorites, pictures are special folders that will mix your files if you use the same account for two computers. if you will create pc1 and pc2 parent folders, create also sub-folders for desktop, documents, favorites, pictures so that files from two computers will not mix even if you will sync both parent folders",
+		"createdAt" : "2019-10-31 16:51:41",
+		"issue_id" : 63,
+		"resolution_id" : 31
+	},
+	{
+		"id" : 46,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100746",
+		"issue" : "pptx files opening in protected view",
+		"resolution" : "the protected view is feature of powerpoint. for whatever reason, even security changes in the the product or updates to office may lead to enforcing protected view at customer side. there would be no mechanism on our side to trigger such behavior in powerpoint. we provide the file as-is. still, if they confirm the steps to reproduce (if using wopi connector) may help us confirm for good.",
+		"createdAt" : "2019-10-18 18:16:17",
+		"issue_id" : 34,
+		"resolution_id" : 32
+	},
+	{
+		"id" : 13,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100628",
+		"issue" : "current version does not support mac os catalina",
+		"resolution" : "not confirmed by customer",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 13,
+		"resolution_id" : 34
+	},
+	{
+		"id" : 22,
+		"url" : "https://syncplicity.zendesk.com/agent/tickets/100642",
+		"issue" : "can not place file: (addedincloud) in , reason: can't open file",
+		"resolution" : "exclude the sub-folder or exclude the file extension from synchronization",
+		"createdAt" : "2019-10-15 00:00:00",
+		"issue_id" : 73,
+		"resolution_id" : 35
+	}
+]

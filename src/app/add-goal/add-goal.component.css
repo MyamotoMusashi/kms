@@ -1,0 +1,23 @@
+.navigation{
+	background-color: whitesmoke;
+}
+
+.list-group{
+	height:90vh;
+	overflow-y:scroll;
+}
+
+#header{
+	color: #007bff;
+	margin-left:1.5vh;
+}
+
+#goal-navigation{
+	padding:0;
+}
+
+#goal-navigation a{
+	margin:0;
+	margin-left:1.5vh;
+	padding:0;
+}

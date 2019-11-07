@@ -1,0 +1,55 @@
+.goals2{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	height:80vh;
+	overflow-y:scroll;
+}
+
+.goals{
+	list-style-type: none;
+}
+
+#goal-header{
+	padding: 3vh;
+	padding-left:0;
+	margin-left:1.5vh;
+	height: 1.5vh;
+	border-top: 1px solid whitesmoke;
+	vertical-align: bottom;
+}
+
+#goal-header th{
+	border-left: 1px solid whitesmoke;
+	border-right: 1px solid whitesmoke;
+}
+
+#goal-item{
+	padding: 3vh;
+	padding-left:0;
+	margin-left:1.5vh;
+	height: 9vh;
+	border-top: 1px solid whitesmoke;
+	vertical-align: bottom;
+}
+
+#goal-item td{
+	border-left: 1px solid whitesmoke;
+	border-right: 1px solid whitesmoke;
+}
+
+#goal-item:hover{
+	background-color: whitesmoke;
+}
+
+#goal-item:hover td{
+	border-color: white;
+}
+
+list-group ul li a{
+	font-size:1em;
+}
+
+.completed{
+	text-decoration-line: line-through;
+}

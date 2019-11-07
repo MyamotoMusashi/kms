@@ -1,0 +1,18 @@
+<div class="row">
+  <div id="request-details" class="col-12 list-group">
+    <h1 id="header">Add SubGoal</h1>
+    <form #taskForm="ngForm">
+      <textarea id="title" class="form-control" placeholder="title" [(ngModel)]="subGoal.title" name="title"></textarea>
+      <textarea id="description" class="form-control" placeholder="description" [(ngModel)]="subGoal.description"
+        name="description"></textarea>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div id="request-navigation" class="col-12">
+    <div class="sticky-top">
+      <a routerLink="/goals/{{id}}" id="backButton" class="btn btn-link">Back</a>
+      <button id="addButton" (click)="addSubGoal()" class="btn btn-link">Add</button>
+    </div>
+  </div>
+</div>

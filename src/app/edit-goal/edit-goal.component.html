@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-12 list-group">
+		<h1 id="header">Edit Goal</h1>
+		<form #goalForm="ngForm">
+			<label>Title:</label>
+			<textarea id="title" placeholder="title" [(ngModel)]="goal.title" name="title"
+				class="form-control"></textarea>
+			<label>Description:</label>
+			<textarea id="description" placeholder="description" [(ngModel)]="goal.description" name="description"
+				class="form-control"></textarea>
+			<label>Parent:</label>
+			<textarea id="parentid" placeholder="Parent" [(ngModel)]="goal.parentid" name="parentid"
+				class="form-control"></textarea>
+			<label>Phase: </label>
+			<select id="phase" [(ngModel)]="goal.phase" name="phase" class="form-control">
+				<option value="researching">Researching</option>
+				<option value="developing">Developing</option>
+				<option value="blocked">Blocked</option>
+				<option value="waiting">Waiting</option>
+			</select>
+			<label>Due date:</label>
+			<textarea id="dueDate" placeholder="Due date" [(ngModel)]="goal.dueDate" name="dueDate"
+				class="form-control"></textarea>
+			<label>Estimated Work:</label>
+			<textarea id="estimatedWork" placeholder="Estimated Work" [(ngModel)]="goal.estimatedWork"
+				name="estimatedWork" class="form-control"></textarea>
+			<label>Remaining Work:</label>
+			<textarea id="remainingWork" placeholder="Remaining Work" [(ngModel)]="goal.remainingWork"
+				name="remainingWork" class="form-control"></textarea>
+			<label>Progress:</label>
+			<textarea id="progress" placeholder="Progress" [(ngModel)]="goal.progress" name="progress"
+				class="form-control"></textarea>
+			<label>Justification:</label>
+			<textarea id="justification" placeholder="Justification" [(ngModel)]="goal.justification"
+				name="justification" class="form-control"></textarea>
+			<label>isCompleted:</label>
+			<textarea id="isCompleted" placeholder="IsCompleted" [(ngModel)]="goal.isCompleted" name="isCompleted"
+				class="form-control"></textarea>
+			<label>isReoccuring:</label>
+			<textarea id="isReoccuring" placeholder="IsReoccuring" [(ngModel)]="goal.isReoccuring" name="isReoccuring"
+				class="form-control"></textarea>
+			<label>Priority:</label>
+			<textarea id="priority" placeholder="Priority" [(ngModel)]="goal.priority" name="priority"
+				class="form-control"></textarea>
+			<label>Ideal Outcome:</label>
+			<textarea id="idealOutcome" placeholder="Ideal Outcome" [(ngModel)]="goal.idealOutcome" name="idealOutcome"
+				class="form-control"></textarea>
+			<label>Scope:</label>
+			<textarea id="scope" placeholder="Scope" [(ngModel)]="goal.scope" name="scope"
+				class="form-control"></textarea>
+			<label>Blocking Reason:</label>
+			<textarea id="blockingReason" placeholder="Blocking Reason" [(ngModel)]="goal.blockingReason"
+				name="blockingReason" class="form-control"></textarea>
+			<label>Replacement:</label>
+			<textarea id="replacement" placeholder="Replacement" [(ngModel)]="goal.replacement" name="replacement"
+				class="form-control"></textarea>
+		</form>
+	</div>
+</div>
+<div class="row">
+	<div id="goal-navigation" class="col-12">
+		<div class="sticky-top">
+			<a routerLink="/goals/{{goal.id}}" id="backButton" class="btn btn-link">Back</a>
+			<button id="editButton" class="btn btn-link" (click)="editGoal()">Edit</button>
+		</div>
+	</div>
+</div>

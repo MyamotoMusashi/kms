@@ -1,0 +1,5 @@
+should fetch the request information from the server.
+should have input fields for each property of the request object fetched from the server.
+should display the request information, as placeholders for the input controls.
+should have two buttons : cancel and save
+save button should send put request to the server.

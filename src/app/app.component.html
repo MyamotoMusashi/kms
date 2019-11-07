@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 navigation">
+            <app-navigation></app-navigation>
+        </div>
+        <div class="col-sm-10 text-left small">
+            <div class="row">
+                <div id="alert-primary" class="col-12 alert alert-primary alert-dismissible fade show" role="alert">
+                    <p id="alert-primary-title">This is a primary alert—check it out!</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
