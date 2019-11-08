@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { GoalsComponent } from './goals/goals.component';
 
-import { GoalsService } from './goals.service';
 import { GoalComponent } from './goal/goal.component';
 import { DailygoalsComponent} from './dailygoals/dailygoals.component'
 import { AddGoalComponent } from './add-goal/add-goal.component';
@@ -60,6 +59,14 @@ const ROUTES = [
   {
     path: 'urls',
     component: UrlsComponent
+  },
+  {
+    path: 'resolutions',
+    component: ResolutionsComponent
+  },
+  {
+    path: 'troubleshootings',
+    component: TroubleshootingsComponent
   },
   {
     path: '',

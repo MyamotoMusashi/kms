@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlsService } from '../urls.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-resolutions',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResolutionsComponent implements OnInit {
 
-  constructor() { }
+  resolutions = [];
+
+  constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.getAllResolutions()
   }
 
+  getAllResolutions() {
+    this.urlsService.getAllResolutions().subscribe(resolutions => {
+      this.resolutions = resolutions;
+    })
+  }
 }

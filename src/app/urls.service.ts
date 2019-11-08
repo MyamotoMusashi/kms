@@ -33,12 +33,12 @@ export class UrlsService {
     return this.http.get<any[]>('http://localhost:8000/api/issues')
   }
 
-  getAllInforForIssueById(id){
-    return this.http.get<any[]>(`http://localhost:8000/api/issues/${id}`)
+  getIssueById(id){
+    return this.http.get(`http://localhost:8000/api/issues/${id}`)
   }
 
-  getAllTroubleshootingsById(id){
-    return this.http.get<any[]>(`http://localhost:8000/api/troubleshootings/${id}`)
+  getAllInforForIssueById(id){
+    return this.http.get<any[]>(`http://localhost:8000/api/issues/${id}/urls`)
   }
 
   addIssue(issue: String, category: String){
@@ -50,5 +50,17 @@ export class UrlsService {
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     
     return this.http.post(`http://localhost:8000/api/issues`, body, options)
+  }
+
+  getAllTroubleshootings(){
+    return this.http.get<any[]>('http://localhost:8000/api/troubleshootings')
+  }
+
+  getAllTroubleshootingsById(id){
+    return this.http.get<any[]>(`http://localhost:8000/api/troubleshootings/${id}`)
+  }
+
+  getAllResolutions(){
+    return this.http.get<any[]>('http://localhost:8000/api/resolutions')
   }
 }

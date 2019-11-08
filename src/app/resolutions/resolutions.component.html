@@ -1,3 +1,7 @@
-<p>
-  resolutions works!
-</p>
+<div class="row">
+  <ul class="list-unstyled list-group list-group-flush">
+    <li *ngFor='let resolution of resolutions' class="list-group-item">
+      <p><a href="resolutions/{{resolution.id}}">{{resolution.resolution}}</a></p>
+    </li>
+  </ul>
+</div>

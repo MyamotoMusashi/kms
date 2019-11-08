@@ -1,8 +1,12 @@
-<article *ngFor = 'let url of urls'>
-      <p><b>id:</b> {{url.id}}</p>
-      <p><b>url:</b>  <a href="{{url.url}}"> {{url.url}}</a></p>
-      <p><b>issue:</b> {{url.issue}}</p>
-      <p><b>resolution:</b> {{url.resolution}}</p>
-      <hr>
-</article>
-
+<div class="row">
+      <ul class="list-unstyled list-group list-group-flush">
+            <li *ngFor='let url of urls' class="list-group-item">
+                  <article>
+                        <p><b>id:</b> {{url.id}}</p>
+                        <p><b>url:</b> <a href="{{url.url}}"> {{url.url}}</a></p>
+                        <p><b>issue:</b> {{url.issue}}</p>
+                        <p><b>resolution:</b> {{url.resolution}}</p>
+                  </article>
+            </li>
+      </ul>
+</div>

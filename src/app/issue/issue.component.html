@@ -2,6 +2,7 @@
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">Add Url</button>
   <a href="/" class="btn btn-link">Add Troubleshooting</a>
   <a href="/" class="btn btn-link">Add Resolution</a>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editIssueModal">Edit Issue</button>
 </div>
 <div class="row">
   <div class="col-12">
@@ -15,9 +16,9 @@
  <div class="col-12">
     <h2>Urls:</h2>
     <ul class="list-unstyled list-group list-group-flush">
-      <li *ngFor='let issue of issues' class="list-group-item">
+      <li *ngFor='let url of urls' class="list-group-item">
         <p>
-          <a href="{{issue.url}}">{{issue.url}}</a> - {{issue.resolution}}
+          <a href="{{url.url}}">{{url.url}}</a> - {{url.resolution}}
         </p>    
       </li>
     </ul>
@@ -35,6 +36,43 @@
         </div>
         <div class="modal-body">
           <input type="text" name="" id="urlInput" placeholder="enter url">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)='addUrl()'>Add</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editIssueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Issue</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="" id="urlInput" placeholder="id" value="{{issue.id}}">
+          <input type="text" placeholder="issue" value="{{issue.issue}}">
+          <select name="" id="categoryInput">
+              <option value="{{issue.tags}}" selected>{{issue.tags}}</option>
+              <option value="Unknown">Unknown</option>
+              <option value="Administration">Administration</option>
+              <option value="API">API</option>
+              <option value="Billing & Subsciption">Billing & Subsciption</option>
+              <option value="Mac Client">Mac Client</option>
+              <option value="Mobile Client">Mobilie Client</option>
+              <option value="Office Online Integration">Office Online Integration</option>
+              <option value="Outlook Client">Outlook Client</option>
+              <option value="Sharing">Sharing</option>
+              <option value="Signing-In">Signing-In</option>
+              <option value="Storage Connector">Storage Connector</option>
+              <option value="Syncing">Syncing</option>
+              <option value="Web Client">Web Client</option>
+            </select>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

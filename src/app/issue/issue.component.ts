@@ -9,22 +9,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class IssueComponent implements OnInit {
 
-  issues = [];
+  urls = [];
   troubleshootings = [];
+  issue = {}
 
   constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
+    this.getIssueById(id)
     this.getAllInforForIssueById(id)
     this.getAllTroubleshootings(id)
+  }
 
-    console.log(this.issues)
+  getIssueById(id) {
+    this.urlsService.getIssueById(id).subscribe(issue => {
+      this.issue = issue;
+      console.log(this.issue)
+    })
   }
 
   getAllInforForIssueById(id) {
-    this.urlsService.getAllInforForIssueById(id).subscribe(issues => {
-      this.issues = issues;
+    this.urlsService.getAllInforForIssueById(id).subscribe(urls => {
+      this.urls = urls;
     })
   }
 

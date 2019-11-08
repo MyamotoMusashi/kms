@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlsService } from '../urls.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-troubleshootings',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TroubleshootingsComponent implements OnInit {
 
-  constructor() { }
+  troubleshootings = [];
+
+  constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.getAllTroubleshootings()
   }
 
+  getAllTroubleshootings() {
+    this.urlsService.getAllTroubleshootings().subscribe(troubleshootings => {
+      this.troubleshootings = troubleshootings;
+    })
+  }
 }

@@ -35,6 +35,13 @@ module.exports = function (app, db) {
 	})
 
 	app.get('/api/issues/:id', (req, res) => {
+		id = req.params.id
+		db.query(`SELECT * FROM issues WHERE id like ${id}`, (error, results, fields) => {
+			res.json(results[0])
+		})
+	})
+
+	app.get('/api/issues/:id/urls', (req, res) => {
 		id = req.params.id 
 		db.query(`SELECT * from urls_view WHERE issue_id like ${id}`, (error, results, fields) => {
 			res.json(results)
@@ -50,6 +57,12 @@ module.exports = function (app, db) {
 	app.get('/api/troubleshootings/:id', (req, res) => {
 		id = req.params.id
 		db.query(`SELECT * FROM troubleshootings WHERE issue_id like ${id}`, (error, results, fields) => {
+			res.json(results)
+		})
+	})
+
+	app.get('/api/resolutions', (req, res) => {
+		db.query("SELECT * FROM resolutions", (error, results, fields) => {
 			res.json(results)
 		})
 	})
