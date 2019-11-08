@@ -18,6 +18,11 @@ import { GoalsListComponent } from './goals-list/goals-list.component';
 import { IssuesComponent } from './issues/issues.component';
 import { UrlsComponent } from './urls/urls.component';
 import { IssueComponent } from './issue/issue.component';
+import { TroubleshootingsComponent } from './troubleshootings/troubleshootings.component';
+import { ResolutionsComponent } from './resolutions/resolutions.component';
+import { ResolutionComponent } from './resolution/resolution.component';
+import { TroubleshootingComponent } from './troubleshooting/troubleshooting.component';
+import { UrlComponent } from './url/url.component';
 
 const ROUTES = [
   {
@@ -76,7 +81,12 @@ const ROUTES = [
     GoalsListComponent,
     IssuesComponent,
     UrlsComponent,
-    IssueComponent
+    IssueComponent,
+    TroubleshootingsComponent,
+    ResolutionsComponent,
+    ResolutionComponent,
+    TroubleshootingComponent,
+    UrlComponent
   ],
   imports: [
     BrowserModule,
