@@ -18,6 +18,10 @@ export class UrlsService {
     return this.http.get<any[]>('http://localhost:8000/api/urls', options)
   }
 
+  getUrlById(id){
+    return this.http.get(`http://localhost:8000/api/urls/${id}`)
+  }
+
   addUrl(url: String, issueId: String) {
     let body = {
       url: url,
@@ -52,6 +56,18 @@ export class UrlsService {
     return this.http.post(`http://localhost:8000/api/issues`, body, options)
   }
 
+  editIssueById(issue: any){
+    let body = {
+      id: issue.id,
+      issue: issue.issue,
+      tags: issue.tags
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.put(`http://localhost:8000/api/issues/${body.id}`, body, options)
+  }
+
   getAllTroubleshootings(){
     return this.http.get<any[]>('http://localhost:8000/api/troubleshootings')
   }
@@ -62,5 +78,9 @@ export class UrlsService {
 
   getAllResolutions(){
     return this.http.get<any[]>('http://localhost:8000/api/resolutions')
+  }
+
+  getAllResolutionsByIssueId(id) {
+    return this.http.get<any[]>(`http://localhost:8000/api/issues/${id}/resolutions`)
   }
 }

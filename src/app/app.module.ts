@@ -61,6 +61,10 @@ const ROUTES = [
     component: UrlsComponent
   },
   {
+    path: 'urls/:id',
+    component: UrlComponent
+  },
+  {
     path: 'resolutions',
     component: ResolutionsComponent
   },

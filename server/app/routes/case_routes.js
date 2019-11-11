@@ -4,7 +4,6 @@ var path = require('path');
 
 module.exports = function (app, db) {
 	app.get('/api/urls', (req,res) => {
-		console.log(req);
 		db.query("SELECT * FROM urls_view", (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
@@ -18,8 +17,14 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.get('/api/urls/:id', (req, res) => {
+		db.query(`SELECT * FROM urls_view WHERE id = ${req.params.id}`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results[0])
+		})
+	})
+
 	app.get('/api/issues', (req,res) => {
-		console.log(req);
 		db.query("SELECT * FROM issues", (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
@@ -27,7 +32,6 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/issues', (req, res) => {
-		console.log(req.body)
 		db.query(`INSERT INTO issues (issue, issue_hash, tags) VALUES (LOWER('${req.body.issue}'), md5(issue), '${req.body.category}');`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)
@@ -41,9 +45,23 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.put('/api/issues/:id' , (req, res) => {
+		db.query(`UPDATE issues SET id=${req.body.id}, issue=\'${req.body.issue}\', issue_hash=md5(issue), tags=\'${req.body.tags}\' WHERE id=${req.body.id};`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/issues/:id/urls', (req, res) => {
 		id = req.params.id 
 		db.query(`SELECT * from urls_view WHERE issue_id like ${id}`, (error, results, fields) => {
+			res.json(results)
+		})
+	})
+
+	app.get('/api/issues/:id/resolutions', (req, res) => {
+		id = req.params.id
+		db.query(`SELECT resolution, COUNT(*) as count FROM urls_view WHERE issue_id = ${id} GROUP BY resolution ORDER BY count DESC;`, (error, results, fields) => {
 			res.json(results)
 		})
 	})

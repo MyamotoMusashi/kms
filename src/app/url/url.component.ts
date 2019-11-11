@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlsService } from '../urls.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-url',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UrlComponent implements OnInit {
 
-  constructor() { }
+  url = {}
+
+  constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id')
+    this.getUrlById(id)
   }
 
+  getUrlById(id){
+    this.urlsService.getUrlById(id).subscribe(url => {
+      this.url = url
+      console.log(this.url)
+    })
+  }
 }
