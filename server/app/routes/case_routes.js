@@ -11,7 +11,7 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/urls', (req, res) => {
-		db.query(`INSERT INTO urls (url, issue_id, resolution_id) VALUES ('${req.body.url}', ${req.body.issueId}, 0);`, (error, results, fields) =>  {
+		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${req.body.url}', '${req.body.title}', ${req.body.issueId}, 0);`, (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
 		})

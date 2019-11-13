@@ -52,7 +52,8 @@ export class IssueComponent implements OnInit {
   addUrl() {
     const id = this.route.snapshot.paramMap.get('id')
     let urlInput = (<HTMLInputElement>document.getElementById('urlInput')).value
-    this.urlsService.addUrl(urlInput, id).subscribe(() => {
+    let urlTitleInput = (<HTMLInputElement>document.getElementById('urlTitleInput')).value
+    this.urlsService.addUrl(urlInput, id, urlTitleInput).subscribe(() => {
       window.location.reload(true)
     })
   }

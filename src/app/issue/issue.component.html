@@ -33,7 +33,7 @@
     <ul class="list-unstyled list-group list-group-flush">
       <li *ngFor='let url of urls' class="list-group-item">
         <p>
-          <a href="/urls/{{url.id}}">{{url.id}}. </a><a href="{{url.url}}">{{url.url}}</a> - {{url.resolution}}
+          <a href="/urls/{{url.id}}">{{url.id}}. </a><a href="{{url.url}}">{{url.url}}</a> - {{url.resolution}} - {{url.title}}
         </p>
       </li>
     </ul>
@@ -53,6 +53,7 @@
       </div>
       <div class="modal-body">
         <input type="text" name="" id="urlInput" placeholder="enter url">
+        <input type="text" name="" id="urlTitleInput" placeholder="enter title">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

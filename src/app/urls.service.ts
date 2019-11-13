@@ -22,10 +22,11 @@ export class UrlsService {
     return this.http.get(`http://localhost:8000/api/urls/${id}`)
   }
 
-  addUrl(url: String, issueId: String) {
+  addUrl(url: String, issueId: String, title: String) {
     let body = {
       url: url,
-      issueId: issueId
+      issueId: issueId,
+      title: title
     }
 
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
