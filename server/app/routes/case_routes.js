@@ -11,7 +11,8 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/urls', (req, res) => {
-		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${req.body.url}', '${req.body.title}', ${req.body.issueId}, 0);`, (error, results, fields) =>  {
+		let title = db.escape(req.body.title)
+		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${req.body.url}', ${title}, ${req.body.issueId}, 0);`, (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
 		})
@@ -24,6 +25,13 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.put('/api/urls/:id', (req, res) => {
+		db.query(`UPDATE urls SET resolution_id = ${req.body.resolutionId} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
+			if (error) console.log(error)
+			res.json(results);
+		})
+	})
+
 	app.get('/api/issues', (req,res) => {
 		db.query("SELECT * FROM issues", (error, results, fields) =>  {
 			if (error) console.log(error)
@@ -32,7 +40,8 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/issues', (req, res) => {
-		db.query(`INSERT INTO issues (issue, issue_hash, tags) VALUES (LOWER('${req.body.issue}'), md5(issue), '${req.body.category}');`, (error, results, fields) => {
+		let issue = db.escape(req.body.issue)
+		db.query(`INSERT INTO issues (issue, issue_hash, tags) VALUES (LOWER(${issue}), md5(issue), '${req.body.category}');`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)
 		})
@@ -46,7 +55,8 @@ module.exports = function (app, db) {
 	})
 
 	app.put('/api/issues/:id' , (req, res) => {
-		db.query(`UPDATE issues SET id=${req.body.id}, issue=\'${req.body.issue}\', issue_hash=md5(issue), tags=\'${req.body.tags}\' WHERE id=${req.body.id};`, (error, results, fields) => {
+		let issue = db.escape(req.body.issue)
+		db.query(`UPDATE issues SET id=${req.body.id}, issue=${issue}, issue_hash=md5(issue), tags=\'${req.body.tags}\' WHERE id=${req.body.id};`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)
 		})

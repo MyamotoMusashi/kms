@@ -34,6 +34,16 @@ export class UrlsService {
     return this.http.post(`http://localhost:8000/api/urls`, body, options)
   }
 
+  editUrlResolutionById(resolutionId, urlId){
+    let body = {
+      resolutionId: resolutionId
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
+  }
+
   getAllIssues(){
     return this.http.get<any[]>('http://localhost:8000/api/issues')
   }

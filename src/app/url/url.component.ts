@@ -24,4 +24,12 @@ export class UrlComponent implements OnInit {
       console.log(this.url)
     })
   }
+
+  editUrlResolutionById(){
+    const id = this.route.snapshot.paramMap.get('id')
+    let resolutionInput = (<HTMLInputElement>document.getElementById('resolutionInput')).value
+    this.urlsService.editUrlResolutionById(resolutionInput, id).subscribe(() => {
+      window.location.reload(true)
+    })
+  }
 }

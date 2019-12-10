@@ -1,7 +1,10 @@
 <div class="row">
   <ul class="list-unstyled list-group list-group-flush">
     <li *ngFor='let resolution of resolutions' class="list-group-item">
-      <p><a href="resolutions/{{resolution.id}}">{{resolution.resolution}}</a></p>
+      <article>
+        <p><b>id:</b> {{resolution.id}}</p>
+        <p><b>resolution:</b> <a href="{resolution.resolution}}"> {{resolution.resolution}}</a></p>
+  </article>
     </li>
   </ul>
 </div>

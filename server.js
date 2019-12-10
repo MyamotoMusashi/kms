@@ -30,6 +30,10 @@ var connection = mySQL.createConnection(db.url)
 
 require('./server/app/routes')(app, connection);
 
+
+
+
+
 app.listen(port, () => {
   console.log('We are live on ' + port);
 });
