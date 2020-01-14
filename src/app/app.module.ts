@@ -22,6 +22,7 @@ import { ResolutionsComponent } from './resolutions/resolutions.component';
 import { ResolutionComponent } from './resolution/resolution.component';
 import { TroubleshootingComponent } from './troubleshooting/troubleshooting.component';
 import { UrlComponent } from './url/url.component';
+import { SearchComponent } from './search/search.component';
 
 const ROUTES = [
   {
@@ -97,7 +98,8 @@ const ROUTES = [
     ResolutionsComponent,
     ResolutionComponent,
     TroubleshootingComponent,
-    UrlComponent
+    UrlComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
