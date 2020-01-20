@@ -26,7 +26,8 @@ module.exports = function (app, db) {
 	})
 
 	app.put('/api/urls/:id', (req, res) => {
-		db.query(`UPDATE urls SET resolution_id = ${req.body.resolutionId} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
+		let title = db.escape(req.body.title)
+		db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
 		})

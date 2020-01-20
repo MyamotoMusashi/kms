@@ -25,10 +25,13 @@ export class UrlComponent implements OnInit {
     })
   }
 
-  editUrlResolutionById(){
+  editUrlById(){
     const id = this.route.snapshot.paramMap.get('id')
-    let resolutionInput = (<HTMLInputElement>document.getElementById('resolutionInput')).value
-    this.urlsService.editUrlResolutionById(resolutionInput, id).subscribe(() => {
+    let urlTitle = (<HTMLInputElement> document.getElementById('urlTitleInput')).value
+    let urlUrl = (<HTMLInputElement> document.getElementById('urlUrlInput')).value
+    let urlIssueId = (<HTMLInputElement> document.getElementById('urlIssueIdInput')).value
+    let urlResolutionId = (<HTMLInputElement> document.getElementById('urlResolutionIdInput')).value
+    this.urlsService.editUrlById(urlTitle, urlUrl, urlIssueId, urlResolutionId, id).subscribe(() => {
       window.location.reload(true)
     })
   }
