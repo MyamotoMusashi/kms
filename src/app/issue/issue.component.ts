@@ -13,6 +13,7 @@ export class IssueComponent implements OnInit {
   troubleshootings = [];
   issue = {};
   resolutions = [];
+  troubleshooting:String;
 
   constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
@@ -58,6 +59,10 @@ export class IssueComponent implements OnInit {
     })
   }
 
+  addTroubleshooting(){
+    console.log(this.troubleshooting)
+  }
+  
   editIssueById() {
     this.urlsService.editIssueById(this.issue).subscribe()
   }
