@@ -60,11 +60,13 @@ export class IssueComponent implements OnInit {
   }
 
   addTroubleshooting(){
-    console.log(this.troubleshooting)
+    const id = this.route.snapshot.paramMap.get('id')
+    this.urlsService.addTroubleshootingByIssueId(this.troubleshooting, id).subscribe(() => {
+      window.location.reload(true)
+    })
   }
-  
+
   editIssueById() {
     this.urlsService.editIssueById(this.issue).subscribe()
   }
-
 }

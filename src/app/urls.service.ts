@@ -90,6 +90,17 @@ export class UrlsService {
     return this.http.get<any[]>(`http://localhost:8000/api/troubleshootings/${id}`)
   }
 
+  addTroubleshootingByIssueId(troubleshooting: String, issueId: String) {
+    let body = {
+      troubleshooting: troubleshooting,
+      issueId: issueId
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.post(`http://localhost:8000/api/troubleshootings`, body, options)
+  }
+
   getAllResolutions(){
     return this.http.get<any[]>('http://localhost:8000/api/resolutions')
   }

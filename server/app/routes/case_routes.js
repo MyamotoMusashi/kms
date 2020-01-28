@@ -90,6 +90,15 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.post('/api/troubleshootings/', (req, res) => {
+		let troubleshooting = db.escape(req.body.troubleshooting)
+		let issue_id = req.body.issueId
+		db.query(`INSERT INTO troubleshootings (troubleshooting, troubleshooting_hash,issue_id) VALUES(LOWER(${troubleshooting}), md5(troubleshooting), ${issue_id}); `, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/resolutions', (req, res) => {
 		db.query("SELECT * FROM resolutions", (error, results, fields) => {
 			res.json(results)
