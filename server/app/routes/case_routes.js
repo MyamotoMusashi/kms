@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = function (app, db) {
 	app.get('/api/urls', (req,res) => {
-		db.query("SELECT * FROM urls_view", (error, results, fields) =>  {
+		db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) =>  {
 			if (error) console.log(error)
 			res.json(results);
 		})
