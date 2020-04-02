@@ -33,6 +33,15 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.put('/api/urls/:id/resolution', (req, res) => {
+		let resolution = db.escape(req.body.resolution)
+		let id = req.params.id
+		db.query(`call updateResolution(${resolution}, ${id});`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/issues', (req,res) => {
 		db.query("SELECT * FROM issues", (error, results, fields) =>  {
 			if (error) console.log(error)
