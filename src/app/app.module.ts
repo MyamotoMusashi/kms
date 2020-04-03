@@ -23,6 +23,7 @@ import { ResolutionComponent } from './resolution/resolution.component';
 import { TroubleshootingComponent } from './troubleshooting/troubleshooting.component';
 import { UrlComponent } from './url/url.component';
 import { SearchComponent } from './search/search.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const ROUTES = [
   {
@@ -74,6 +75,10 @@ const ROUTES = [
     component: TroubleshootingsComponent
   },
   {
+    path:'categories',
+    component:CategoriesComponent
+  },
+  {
     path: '',
     redirectTo: 'goals',
     pathMatch: 'full'
@@ -99,7 +104,8 @@ const ROUTES = [
     ResolutionComponent,
     TroubleshootingComponent,
     UrlComponent,
-    SearchComponent
+    SearchComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
