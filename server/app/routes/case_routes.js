@@ -114,6 +114,13 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.get('/api/categories', (req, res) => {
+		db.query("SELECT * FROM categories WHERE parent_category_id IS NULL;", (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/requests/elevations', (req, res) => {
 		db.collection('requests').find({ requestStatus: "elevations" }).toArray((err, elevations) => {
 			if (err) {
