@@ -120,4 +120,8 @@ export class UrlsService {
 
     return this.http.put(`http://localhost:8000/api/urls/${body.id}/resolution`, body, options)
   }
+
+  getAllCategories(){
+    return this.http.get<any[]>('http://localhost:8000/api/categories')
+  }
 }
