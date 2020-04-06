@@ -25,7 +25,9 @@ export class CategoriesComponent implements OnInit {
 
   addCategory(){
     let category = (<HTMLInputElement> document.getElementById("categoryInput")).value
-    console.log(category)
+    this.urlsService.addCategory(category).subscribe(() => {
+      window.location.reload()
+    })
   }
 
 }
