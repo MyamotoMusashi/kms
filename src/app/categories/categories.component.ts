@@ -19,7 +19,13 @@ export class CategoriesComponent implements OnInit {
   getAllCategories(){
     this.urlsService.getAllCategories().subscribe((categories) => {
       this.categories = categories;
+      console.log(this.categories)
     })
+  }
+
+  addCategory(){
+    let category = (<HTMLInputElement> document.getElementById("categoryInput")).value
+    console.log(category)
   }
 
 }
