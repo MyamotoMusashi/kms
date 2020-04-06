@@ -124,4 +124,14 @@ export class UrlsService {
   getAllCategories(){
     return this.http.get<any[]>('http://localhost:8000/api/categories')
   }
+
+  addCategory(category: String){
+    let body = {
+      category: category
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.post(`http://localhost:8000/api/categories`, body, options)
+  }
 }
