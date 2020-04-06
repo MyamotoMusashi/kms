@@ -121,6 +121,14 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.post('/api/categories', (req, res) => {
+		let category = db.escape(req.body.category)
+		db.query(`INSERT INTO categories (category, category_hash) VALUES(LOWER(${category}), md5(LOWER(category)));`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/requests/elevations', (req, res) => {
 		db.collection('requests').find({ requestStatus: "elevations" }).toArray((err, elevations) => {
 			if (err) {
