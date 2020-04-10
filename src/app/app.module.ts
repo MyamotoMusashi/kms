@@ -24,6 +24,7 @@ import { TroubleshootingComponent } from './troubleshooting/troubleshooting.comp
 import { UrlComponent } from './url/url.component';
 import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { CategoryComponent } from './category/category.component';
 
 const ROUTES = [
   {
@@ -105,7 +106,8 @@ const ROUTES = [
     TroubleshootingComponent,
     UrlComponent,
     SearchComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
