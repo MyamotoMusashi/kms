@@ -1,3 +1,82 @@
-<p>
-  category works!
-</p>
+<div class="row">
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addSubCategoryModal">Add Sub-Category</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addIssueToCategoryModal">Add Issue</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editCategoryModal">Edit Category</button>
+</div>
+<div class="row">
+  <p>Sub-Categories:</p>
+  <ul class="list-unstyled list-group list-group-flush">
+    <li *ngFor='let category of categories' class="list-group-item">
+      <p> <a href="categories/{{category.id}}">{{category.category}}</a></p>
+    </li>
+  </ul>
+</div>
+<div class="row">
+    <p>Issues:</p>
+    <ul class="list-unstyled list-group list-group-flush">
+      <li *ngFor='let category of categories' class="list-group-item">
+        <p> <a href="categories/{{category.id}}">{{category.category}}</a></p>
+      </li>
+    </ul>
+  </div>
+
+<div class="modal fade" id="addSubCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addSubCategoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSubCategoryModalLabel">Add Sub-Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="" id="subCategoryInput" placeholder="enter sub-category">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='addSubCategory()'>Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addIssueToCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addIssuetoCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addIssueToCategoryModalLabel">Add Issue to Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="" id="issueIdInput" placeholder="enter issue id">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)='addIssueToCategory()'>Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editCategoryModalLabel">Edit Category</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="" id="editCategoryInput" placeholder="enter title">
+            <input type="text" name="" id="editCategoryParentIdInput" placeholder="enter parent id">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)='editCategory()'>Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
