@@ -68,6 +68,10 @@ const ROUTES = [
     component: UrlComponent
   },
   {
+    path: 'categories/:id',
+    component: CategoryComponent
+  },
+  {
     path: 'resolutions',
     component: ResolutionsComponent
   },
