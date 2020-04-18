@@ -59,6 +59,7 @@ export class UrlsService {
     return this.http.get<any[]>(`http://localhost:8000/api/issues/${id}/urls`)
   }
 
+
   addIssue(issue: String, category: String){
     let body = {
       issue: issue,
@@ -123,6 +124,14 @@ export class UrlsService {
 
   getAllCategories(){
     return this.http.get<any[]>('http://localhost:8000/api/categories')
+  }
+
+  getAllSubCategoriesByCategoryId(categoryId) {
+    return this.http.get<any[]>(`http://localhost:8000/api/categories/${categoryId}/subCategories`)
+  }
+
+  getAllIssuesByCategoryId(categoryId) {
+    return this.http.get<any[]>(`http://localhost:8000/api/categories/${categoryId}/issues`)
   }
 
   addCategory(category: String){

@@ -4,21 +4,26 @@
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editCategoryModal">Edit Category</button>
 </div>
 <div class="row">
-  <p>Sub-Categories:</p>
-  <ul class="list-unstyled list-group list-group-flush">
-    <li *ngFor='let category of categories' class="list-group-item">
-      <p> <a href="categories/{{category.id}}">{{category.category}}</a></p>
-    </li>
-  </ul>
-</div>
-<div class="row">
-    <p>Issues:</p>
+  <div class="col">
+    <h2>Sub-Categories:</h2>
     <ul class="list-unstyled list-group list-group-flush">
-      <li *ngFor='let category of categories' class="list-group-item">
+      <li *ngFor='let category of subCategories' class="list-group-item">
         <p> <a href="categories/{{category.id}}">{{category.category}}</a></p>
       </li>
     </ul>
   </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h2>Issues:</h2>
+    <ul class="list-unstyled list-group list-group-flush">
+      <li *ngFor='let issue of issues' class="list-group-item">
+        <p> <a href="categories/{{issue.id}}">{{issue.issue}}</a></p>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="modal fade" id="addSubCategoryModal" tabindex="-1" role="dialog" aria-labelledby="addSubCategoryModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
