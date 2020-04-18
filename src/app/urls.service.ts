@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
+import { returnStatement } from 'babel-types';
 
 @Injectable({
   providedIn: 'root'
@@ -111,7 +112,6 @@ export class UrlsService {
   }
   
   editResolutionByUrlId(resolution, id) {
-
     let body = {
       resolution: resolution,
       id: id,
@@ -142,5 +142,15 @@ export class UrlsService {
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
 
     return this.http.post(`http://localhost:8000/api/categories`, body, options)
+  }
+
+  addSubCategory(subCategory: String, parentCategoryId) {
+    let body = {
+      subCategory: subCategory
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) }
+
+    return this.http.post(`http://localhost:8000/api/categories/${parentCategoryId}/subCategories`, body, options)
   }
 }

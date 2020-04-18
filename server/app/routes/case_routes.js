@@ -127,6 +127,14 @@ module.exports = function (app, db) {
 			res.json(results)
 		})
 	})
+	
+	app.post('/api/categories/:id/subCategories', (req, res) => {
+		let subCategory = db.escape(req.body.subCategory)
+		db.query(`INSERT INTO categories (category, category_hash, parent_category_id) VALUES(LOWER(${subCategory}), md5(LOWER(category)), ${req.params.id});`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
 
 	app.get('/api/categories/:id/issues', (req, res) => {
 		db.query(`SELECT * FROM issues WHERE category_id LIKE ${req.params.id}`, (error,results, fields) => {
@@ -134,7 +142,7 @@ module.exports = function (app, db) {
 			res.json(results)
 		})
 	})
-	
+
 	app.post('/api/categories', (req, res) => {
 		let category = db.escape(req.body.category)
 		db.query(`INSERT INTO categories (category, category_hash) VALUES(LOWER(${category}), md5(LOWER(category)));`, (error, results, fields) => {

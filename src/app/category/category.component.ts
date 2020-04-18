@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlsService } from '../urls.service';
 import { ActivatedRoute } from '@angular/router';
+import { throwStatement } from 'babel-types';
 
 @Component({
   selector: 'app-category',
@@ -11,20 +12,35 @@ export class CategoryComponent implements OnInit {
 
   issues = []
   subCategories = []
+  categoryId = this.route.snapshot.paramMap.get('id')
 
   constructor(private urlService: UrlsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let categoryId = this.route.snapshot.paramMap.get('id')
-    
-    this.urlService.getAllIssuesByCategoryId(categoryId).subscribe((issues) => {
+    this.urlService.getAllIssuesByCategoryId(this.categoryId).subscribe((issues) => {
       this.issues = issues
     })
 
-    this.urlService.getAllSubCategoriesByCategoryId(categoryId).subscribe((categories) => {
+    this.urlService.getAllSubCategoriesByCategoryId(this.categoryId).subscribe((categories) => {
       this.subCategories = categories
     })
+ }
 
-  }
+ addSubCategory(){
+   let subCategoryInput = (<HTMLInputElement>document.getElementById('subCategoryInput')).value
+   console.log(subCategoryInput)
+   this.urlService.addSubCategory(subCategoryInput, this.categoryId ).subscribe(() => {
+     subCategoryInput = ''
+     window.location.reload()
+   })
+ }
+
+ addIssueToCategory(){
+  console.log("TODO")
+ }
+
+ editCategory(){
+  console.log("TODO")
+ }
 
 }
