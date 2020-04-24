@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UrlsService } from '../urls.service';
 import { ActivatedRoute } from '@angular/router';
 import { throwStatement } from 'babel-types';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-category',
@@ -45,7 +46,11 @@ export class CategoryComponent implements OnInit {
  }
 
  editCategory(){
-  console.log("TODO")
+  let editCategoryInput = (<HTMLInputElement>document.getElementById('editCategoryInput')).value,
+  editCategoryParentIdInput = (<HTMLInputElement>document.getElementById('editCategoryParentIdInput')).value
+  this.urlService.editCategoryById(this.categoryId, editCategoryInput, editCategoryParentIdInput).subscribe(() => {
+    window.location.reload()
+  })
  }
 
 }
