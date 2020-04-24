@@ -130,6 +130,17 @@ export class UrlsService {
     return this.http.get(`http://localhost:8000/api/categories/${categoryId}`)
   }
 
+  editCategoryById(categoryId, categoryCategory, categoryParentCategoryId) {
+    let body = {
+      category: categoryCategory,
+      parentCategoryId: categoryParentCategoryId,
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.put(`http://localhost:8000/api/categories/${categoryId}`, body, options)
+  }
+
   getAllSubCategoriesByCategoryId(categoryId) {
     return this.http.get<any[]>(`http://localhost:8000/api/categories/${categoryId}/subCategories`)
   }
