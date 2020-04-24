@@ -121,6 +121,13 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.get('/api/categories/:id', (req, res) => {
+		db.query(`SELECT * FROM categories WHERE id LIKE ${req.params.id}`, (error,results, fields) => {
+			if (error) console.log(error)
+			res.json(results[0])
+		})
+	})
+
 	app.get('/api/categories/:id/subCategories', (req, res) => {
 		db.query(`SELECT * FROM categories WHERE parent_category_id LIKE ${req.params.id}`, (error,results, fields) => {
 			if (error) console.log(error)

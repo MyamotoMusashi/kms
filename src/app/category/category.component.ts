@@ -10,6 +10,7 @@ import { throwStatement } from 'babel-types';
 })
 export class CategoryComponent implements OnInit {
 
+  category = {}
   issues = []
   subCategories = []
   categoryId = this.route.snapshot.paramMap.get('id')
@@ -17,6 +18,10 @@ export class CategoryComponent implements OnInit {
   constructor(private urlService: UrlsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.urlService.getCategoryById(this.categoryId).subscribe((category) => {
+      this.category = category
+    })
+
     this.urlService.getAllIssuesByCategoryId(this.categoryId).subscribe((issues) => {
       this.issues = issues
     })

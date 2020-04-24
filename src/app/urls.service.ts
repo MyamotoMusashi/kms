@@ -125,6 +125,10 @@ export class UrlsService {
   getAllCategories(){
     return this.http.get<any[]>('http://localhost:8000/api/categories')
   }
+  
+  getCategoryById(categoryId){
+    return this.http.get(`http://localhost:8000/api/categories/${categoryId}`)
+  }
 
   getAllSubCategoriesByCategoryId(categoryId) {
     return this.http.get<any[]>(`http://localhost:8000/api/categories/${categoryId}/subCategories`)
