@@ -128,6 +128,14 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.put('/api/categories/:id', (req, res) => {
+		let category = db.escape(req.body.category)
+		db.query(`UPDATE categories SET category=LOWER(${category}), category_hash=md5(category), parent_category_id=${req.body.parentCategoryId} WHERE id=${req.params.id};`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/categories/:id/subCategories', (req, res) => {
 		db.query(`SELECT * FROM categories WHERE parent_category_id LIKE ${req.params.id}`, (error,results, fields) => {
 			if (error) console.log(error)
