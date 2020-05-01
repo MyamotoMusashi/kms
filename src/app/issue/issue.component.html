@@ -29,13 +29,24 @@
   </div>
   <div class="col-12">
     <h3>Urls:</h3>
-    <ul class="list-unstyled list-group list-group-flush">
-      <li *ngFor='let url of urls' class="list-group-item">
-        <p>
-          <a href="/urls/{{url.id}}">{{url.id}}. </a><a href="{{url.url}}">{{url.url}}</a> - {{url.resolution}} - {{url.title}}
-        </p>
-      </li>
-    </ul>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Url</th>
+              <th scope="col">Resolution</th>
+              <th scope="col">Title</th>
+            </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let url of urls'>
+          <td> <a href="/urls/{{url.id}}">{{url.id}}</a></td>
+          <td><a href="{{url.url}}">{{url.url}}</a></td>
+          <td><p>{{url.resolution}}</p></td>
+          <td><p>{{url.title}}</p></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
