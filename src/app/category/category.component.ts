@@ -34,7 +34,6 @@ export class CategoryComponent implements OnInit {
 
  addSubCategory(){
    let subCategoryInput = (<HTMLInputElement>document.getElementById('subCategoryInput')).value
-   console.log(subCategoryInput)
    this.urlService.addSubCategory(subCategoryInput, this.categoryId ).subscribe(() => {
      subCategoryInput = ''
      window.location.reload()
@@ -42,7 +41,11 @@ export class CategoryComponent implements OnInit {
  }
 
  addIssueToCategory(){
-  console.log("TODO")
+  let issueInput = (<HTMLInputElement>document.getElementById('issueInput')).value
+  this.urlService.addIssueToCategory(issueInput, this.categoryId).subscribe(() => {
+    issueInput = ''
+    window.location.reload()
+  })
  }
 
  editCategory(){
