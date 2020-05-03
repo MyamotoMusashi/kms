@@ -67,6 +67,8 @@ export class IssueComponent implements OnInit {
   }
 
   editIssueById() {
-    this.urlsService.editIssueById(this.issue).subscribe()
+    this.urlsService.editIssueById(this.issue).subscribe(() => {
+      window.location.reload()
+    })
   }
 }
