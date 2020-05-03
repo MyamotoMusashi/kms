@@ -147,6 +147,15 @@ export class UrlsService {
     return this.http.get<any[]>(`http://localhost:8000/api/categories/${categoryId}/issues`)
   }
 
+  addIssueToCategory(issue, categoryId){
+    let body = {
+      issue: issue
+    }
+
+    let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})}
+    return this.http.post(`http://localhost:8000/api/categories/${categoryId}/issues`, body, options)
+  }
+
   addCategory(category: String){
     let body = {
       category: category
