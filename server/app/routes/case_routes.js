@@ -158,6 +158,14 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.post('/api/categories/:id/issues', (req, res) => {
+		let issue = db.escape(req.body.issue)
+		db.query(`INSERT INTO issues (issue, issue_hash, category_id) VALUES (LOWER(${issue}), md5(issue), '${req.params.id}');`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
 	app.post('/api/categories', (req, res) => {
 		let category = db.escape(req.body.category)
 		db.query(`INSERT INTO categories (category, category_hash) VALUES(LOWER(${category}), md5(LOWER(category)));`, (error, results, fields) => {
