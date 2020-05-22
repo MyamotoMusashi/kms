@@ -69,10 +69,22 @@
       <div class="modal-body">
           <div class="row">
               <div class="col-12">
-                  <label for="urlResolutionIdInput">Resolution: </label>
-                  <input type="text" id="urlResolutionInput" [(ngModel)]="url.resolution">
+                  <div class="ng-autocomplete">
+                      <ng-autocomplete class="form-control" placeHolder="resolutions" [ngModel]='url.resolution' [data]="data" [searchKeyword]="keyword" [itemTemplate]="itemTemplate" 
+                          [notFoundTemplate]="notFoundTemplate" (selected)='onSelected($event)'>
+                      </ng-autocomplete>
+                    
+                      <ng-template #itemTemplate let-item>
+                          <a [innerHTML]="item.resolution"></a>
+
+                      </ng-template>
+                    
+                      <ng-template #notFoundTemplate let-notFound>
+                          <div [innerHTML]="notFound"></div>
+                      </ng-template>    
+                   </div>           
               </div>
-            </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

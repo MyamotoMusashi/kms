@@ -8,20 +8,25 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./url.component.css']
 })
 export class UrlComponent implements OnInit {
-
   url = {}
+  keyword = 'resolution';  
+  data = [];
+
+  
 
   constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id')
     this.getUrlById(id)
+    this.urlsService.getAllResolutions().subscribe(data => {
+      this.data = data
+    })
   }
 
   getUrlById(id){
     this.urlsService.getUrlById(id).subscribe(url => {
       this.url = url
-      console.log(this.url)
     })
   }
 
@@ -38,9 +43,13 @@ export class UrlComponent implements OnInit {
 
   editResolutionByUrlId(){
     const id = this.route.snapshot.paramMap.get('id')
-    let urlResolution = (<HTMLInputElement> document.getElementById('urlResolutionInput')).value
-    this.urlsService.editResolutionByUrlId(urlResolution, id).subscribe(() => {
+    
+    this.urlsService.editResolutionByUrlId(this.url['resolution'], id).subscribe(() => {
       window.location.reload(true)
     })
+  }
+
+  onSelected(event){
+    this.url['resolution'] = event.resolution
   }
 }

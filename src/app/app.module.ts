@@ -25,6 +25,7 @@ import { UrlComponent } from './url/url.component';
 import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 const ROUTES = [
   {
@@ -117,6 +118,7 @@ const ROUTES = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AutocompleteLibModule,
     RouterModule.forRoot(ROUTES), // Add routes to the app
   ],
   providers: [],
