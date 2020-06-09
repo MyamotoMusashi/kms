@@ -9,6 +9,8 @@
       <p>Url: <a href="{{url.url}}">{{url.url}}</a></p>
       <p>Resolution: {{url.resolution}}</p>
       <p>Date of Creation: {{url.createdAt}}</p>
+      <p>Next Action Steps:</p>
+      <p>Action Steps History:</p>
   </div>
 </div>
 
@@ -45,6 +47,12 @@
               <div class="col-12">
                   <label for="urlResolutionIdInput">Resolution Id: </label>
                   <input type="text" id="urlResolutionIdInput" [(ngModel)]="url.resolution_id">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label for="urlNextActionStepsInput">Next Action Steps:</label>
+                <input type="text" name="" id="urlNextActionStepsInput" [(ngModel)]="url.next_action_steps">
               </div>
             </div>
       </div>
