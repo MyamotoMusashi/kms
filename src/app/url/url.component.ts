@@ -36,7 +36,8 @@ export class UrlComponent implements OnInit {
     let urlUrl = (<HTMLInputElement> document.getElementById('urlUrlInput')).value
     let urlIssueId = (<HTMLInputElement> document.getElementById('urlIssueIdInput')).value
     let urlResolutionId = (<HTMLInputElement> document.getElementById('urlResolutionIdInput')).value
-    this.urlsService.editUrlById(urlTitle, urlUrl, urlIssueId, urlResolutionId, id).subscribe(() => {
+    let urlNextActionSteps = (<HTMLInputElement> document.getElementById('urlNextActionStepsInput')).value
+    this.urlsService.editUrlById(urlTitle, urlUrl, urlIssueId, urlResolutionId, urlNextActionSteps, id).subscribe(() => {
       window.location.reload(true)
     })
   }

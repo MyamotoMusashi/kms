@@ -33,12 +33,13 @@ export class UrlsService {
     return this.http.post(`http://localhost:8000/api/urls`, body, options)
   }
 
-  editUrlById(urlTitle, urlUrl, urlIssueId, urlResolutionId, urlId){
+  editUrlById(urlTitle, urlUrl, urlIssueId, urlResolutionId, urlNextActionSteps, urlId){
     let body = {
       title: urlTitle,
       url: urlUrl,
       issueId: urlIssueId,
-      resolutionId: urlResolutionId
+      resolutionId: urlResolutionId,
+      nextActionSteps: urlNextActionSteps
     }
 
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
