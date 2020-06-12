@@ -47,6 +47,10 @@ export class UrlsService {
     return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
   }
 
+  getNextActionStepsByUrlId(id){
+    return this.http.get(`http://localhost:8000/api/urls/${id}/nextActionSteps`)
+  }
+  
   getAllIssues(){
     return this.http.get<any[]>('http://localhost:8000/api/issues')
   }

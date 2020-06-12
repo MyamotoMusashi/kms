@@ -9,8 +9,11 @@
       <p><span class="font-weight-bold">Url: </span><a href="{{url.url}}">{{url.url}}</a></p>
       <p><span class="font-weight-bold">Resolution: </span>{{url.resolution}}</p>
       <p><span class="font-weight-bold">Date of Creation: </span>{{url.createdAt}}</p>
-      <p><span class="font-weight-bold">Next Action Steps: </span>{{url.nextActionSteps}}</p>
+      <p><span class="font-weight-bold">Next Action Steps: </span><button type="button" class="btn btn-link" data-toggle="modal" data-target="#completeNextActionStepsModal">{{url.nextActionSteps}}</button></p>
       <p><span class="font-weight-bold">Action Steps History: </span></p>
+      <ul>
+        <li *ngFor='let i of nextActionSteps'>{{i.nextActionStep}}</li>
+      </ul>
   </div>
 </div>
 
@@ -97,6 +100,31 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)='editResolutionByUrlId()'>Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="completeNextActionStepsModal" tabindex="-1" role="dialog" aria-labelledby="completeNextActionStepsModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="completeNextActionStepsModalLabel">Complete Next Action Step</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-12">
+                  <p>{{url.nextActionSteps}}</p>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='completeNextActionStepsByUrlId()'>Complete</button>
       </div>
     </div>
   </div>

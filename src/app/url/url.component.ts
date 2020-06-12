@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UrlComponent implements OnInit {
   url = {}
+  nextActionSteps;
   keyword = 'resolution';  
   data = [];
 
@@ -19,6 +20,7 @@ export class UrlComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id')
     this.getUrlById(id)
+    this.getNextActionStepsByUrlId(id)
     this.urlsService.getAllResolutions().subscribe(data => {
       this.data = data
     })
@@ -48,6 +50,17 @@ export class UrlComponent implements OnInit {
     this.urlsService.editResolutionByUrlId(this.url['resolution'], id).subscribe(() => {
       window.location.reload(true)
     })
+  }
+
+  getNextActionStepsByUrlId(id){
+    this.urlsService.getNextActionStepsByUrlId(id).subscribe(data => {
+      this.nextActionSteps = data
+      console.log(data)
+    })
+  }
+
+  completeNextActionStepsByUrlId(){
+    console.log('it works')
   }
 
   onSelected(event){

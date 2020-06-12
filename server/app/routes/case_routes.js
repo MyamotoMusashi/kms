@@ -43,6 +43,14 @@ module.exports = function (app, db) {
 		})
 	})
 
+	app.get('/api/urls/:id/nextActionSteps', (req, res) => {
+		db.query(`SELECT * FROM nextactionsteps WHERE url_id = ${req.params.id}`, (error, results, fields) => {
+			if (error) console.log(error)
+			console.log(results)
+			res.json(results)
+		})
+	})
+
 	app.get('/api/issues', (req,res) => {
 		db.query("SELECT * FROM issues", (error, results, fields) =>  {
 			if (error) console.log(error)
