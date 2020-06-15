@@ -86,12 +86,12 @@
           <div class="row">
               <div class="col-12">
                   <div class="ng-autocomplete">
-                      <ng-autocomplete class="form-control" placeHolder="resolutions" [ngModel]='url.resolution' [data]="data" [searchKeyword]="keyword" [itemTemplate]="itemTemplate" 
+                      <ng-autocomplete class="form-control" placeHolder="resolutions" [data]="data" [(ngModel)]='url.resolution' [searchKeyword]="keyword" [itemTemplate]="itemTemplate" 
                           [notFoundTemplate]="notFoundTemplate" (selected)='onSelected($event)'>
                       </ng-autocomplete>
                     
                       <ng-template #itemTemplate let-item>
-                          <a [innerHTML]="item.resolution"></a>
+                          <a [innerHTML]="item"></a>
 
                       </ng-template>
                     

@@ -22,7 +22,7 @@ export class UrlComponent implements OnInit {
     this.getUrlById(id)
     this.getNextActionStepsByUrlId(id)
     this.urlsService.getAllResolutions().subscribe(data => {
-      this.data = data
+      this.data = data.map(resolution => resolution.resolution)
     })
   }
 
@@ -45,17 +45,17 @@ export class UrlComponent implements OnInit {
   }
 
   editResolutionByUrlId(){
+    console.log(this.url['resolution'])
     const id = this.route.snapshot.paramMap.get('id')
-    
     this.urlsService.editResolutionByUrlId(this.url['resolution'], id).subscribe(() => {
-      window.location.reload(true)
+      console.log(this.url['resolution'])
+      //window.location.reload(true)
     })
   }
 
   getNextActionStepsByUrlId(id){
     this.urlsService.getNextActionStepsByUrlId(id).subscribe(data => {
       this.nextActionSteps = data
-      console.log(data)
     })
   }
 
@@ -64,6 +64,8 @@ export class UrlComponent implements OnInit {
   }
 
   onSelected(event){
+    console.log(event.resolution)
     this.url['resolution'] = event.resolution
+    console.log(this.url['resolution'])
   }
 }
