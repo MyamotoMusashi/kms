@@ -50,6 +50,16 @@ export class UrlsService {
   getNextActionStepsByUrlId(id){
     return this.http.get(`http://localhost:8000/api/urls/${id}/nextActionSteps`)
   }
+
+  addActionStepToHIstoryByUrlId(actionStep: String, id){
+    let body = {
+      actionStep: actionStep,
+    }
+
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    
+    return this.http.post(`http://localhost:8000/api/urls/${id}/nextActionSteps`, body, options)
+  }
   
   getAllIssues(){
     return this.http.get<any[]>('http://localhost:8000/api/issues')

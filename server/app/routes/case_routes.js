@@ -46,6 +46,15 @@ module.exports = function (app, db) {
 	app.get('/api/urls/:id/nextActionSteps', (req, res) => {
 		db.query(`SELECT * FROM nextactionsteps WHERE url_id = ${req.params.id}`, (error, results, fields) => {
 			if (error) console.log(error)
+			res.json(results)
+		})
+	})
+
+	app.post('/api/urls/:id/nextActionSteps', (req, res) => {
+		let actionStep = db.escape(req.body.actionStep)
+		let id = req.params.id
+		db.query(`INSERT INTO nextactionsteps (nextActionStep, url_id) VALUES (LOWER(${actionStep}), ${id});`, (error, results, fields) => {
+			if (error) console.log(error)
 			console.log(results)
 			res.json(results)
 		})

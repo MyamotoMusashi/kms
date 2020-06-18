@@ -2,6 +2,7 @@
 <div class="row">
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editUrlModal">Edit Url</button>
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editResolutionModal">Edit Resolution</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addActionStepToHistoryModal">Add Action Step to History</button>
 </div>
 <div class="row">
   <div class="col-12">
@@ -135,4 +136,29 @@
   </div>
 </div>
 
+<div class="modal fade" id="addActionStepToHistoryModal" tabindex="-1" role="dialog" aria-labelledby="addActionStepToHistoryModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addActionStepToHistoryModalLabel">Add Action Step to History</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-12">
+                <label for="urlUrlInput"></label>
+                <input type="text" id="addActionStepToHistoryInput" placeholder="Enter Action Step">
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='addActionStepToHistoryByUrlId()'>Add</button>
+      </div>
+    </div>
+  </div>
+</div>
 

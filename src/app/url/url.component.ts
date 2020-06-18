@@ -53,6 +53,11 @@ export class UrlComponent implements OnInit {
     })
   }
 
+  addActionStepToHistoryByUrlId() {
+    let actionStep = (<HTMLInputElement> document.getElementById(`addActionStepToHistoryInput`)).value
+    const id = this.route.snapshot.paramMap.get('id')
+    this.urlsService.addActionStepToHIstoryByUrlId(actionStep, id).subscribe()
+  }
   getNextActionStepsByUrlId(id){
     this.urlsService.getNextActionStepsByUrlId(id).subscribe(data => {
       this.nextActionSteps = data
@@ -62,6 +67,8 @@ export class UrlComponent implements OnInit {
   completeNextActionStepsByUrlId(){
     console.log('it works')
   }
+
+
 
   onSelected(event){
     console.log(event.resolution)
