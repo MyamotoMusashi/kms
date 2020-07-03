@@ -4,10 +4,19 @@ var path = require('path');
 
 module.exports = function (app, db) {
 	app.get('/api/urls', (req,res) => {
-		db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) =>  {
-			if (error) console.log(error)
-			res.json(results);
-		})
+		if (req.query.today){
+			db.query(`SELECT * FROM urls_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
+				if (error) console.log(error)
+				res.json(results)
+				console.log('it works')
+			})
+		}
+		else{
+			db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) =>  {
+				if (error) console.log(error)
+				res.json(results);
+			})
+		}
 	})
 
 	app.post('/api/urls', (req, res) => {
@@ -26,12 +35,20 @@ module.exports = function (app, db) {
 	})
 
 	app.put('/api/urls/:id', (req, res) => {
-		let title = db.escape(req.body.title)
-		let nextActionSteps = db.escape(req.body.nextActionSteps)
-		db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
-			if (error) console.log(error)
-			res.json(results);
-		})
+		if(req.query.assignee){
+			db.query(`UPDATE urls SET assignee = '${req.query.assignee}' WHERE id = ${req.params.id};`, (error, results, fields) => {
+				if (error) console.log(error)
+				res.json(results)
+			})
+		}
+		else {
+			let title = db.escape(req.body.title)
+			let nextActionSteps = db.escape(req.body.nextActionSteps)
+			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
+				if (error) console.log(error)
+				res.json(results);
+			})
+		}
 	})
 
 	app.put('/api/urls/:id/resolution', (req, res) => {

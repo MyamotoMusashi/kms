@@ -17,6 +17,10 @@ export class UrlsService {
     return this.http.get<any[]>('http://localhost:8000/api/urls', options)
   }
 
+  getTodayUrls(){
+    return this.http.get<any[]>(`http://localhost:8000/api/urls?today=''`)
+  }
+
   getUrlById(id){
     return this.http.get(`http://localhost:8000/api/urls/${id}`)
   }
@@ -43,6 +47,14 @@ export class UrlsService {
     }
 
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+
+    return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
+  }
+
+  assignUrlToMe(urlId){
+    let body = {}
+
+    let options = { params: {'assignee': 'gdragnev'}, headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
 
     return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
   }

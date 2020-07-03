@@ -15,13 +15,26 @@ export class UrlsComponent implements OnInit {
   constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.getAllUrls()
+    this.route.queryParamMap.subscribe(queryParams => {
+      if(queryParams[`params`][`today`] === ''){
+        this.getTodayUrls();
+      }
+      else {
+        this.getAllUrls();
+      }
+    })
   }
 
   getAllUrls() {
     this.urlsService.getAllUrls().subscribe(urls => {
       this.urls = urls
     });
+  }
+
+  getTodayUrls() {
+    this.urlsService.getTodayUrls().subscribe(urls => {
+      this.urls = urls
+    })
   }
 
   getAllIssues() {

@@ -68,7 +68,10 @@ export class UrlComponent implements OnInit {
     console.log('it works')
   }
 
-
+  assignUrlToMe(){
+    const id = this.route.snapshot.paramMap.get('id')
+    this.urlsService.assignUrlToMe(id).subscribe()
+  }
 
   onSelected(event){
     console.log(event.resolution)
