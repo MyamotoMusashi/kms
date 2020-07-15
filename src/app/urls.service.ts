@@ -46,7 +46,7 @@ export class UrlsService {
       nextActionSteps: urlNextActionSteps
     }
 
-    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' }) }
 
     return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
   }
@@ -54,7 +54,15 @@ export class UrlsService {
   assignUrlToMe(urlId){
     let body = {}
 
-    let options = { params: {'assignee': 'gdragnev'}, headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+    let options = { params: {'assignee': 'gdragnev'}, headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' }) }
+
+    return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
+  }
+
+  assignUrlToOpen(urlId){
+    let body = {}
+
+    let options = { params: {'assignee': null }, headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' }) }
 
     return this.http.put(`http://localhost:8000/api/urls/${urlId}`, body, options)
   }

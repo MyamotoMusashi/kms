@@ -3,7 +3,11 @@
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editUrlModal">Edit Url</button>
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editResolutionModal">Edit Resolution</button>
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addActionStepToHistoryModal">Add Action Step to History</button>
-  <button type="button" class="btn btn-link" (click)="assignUrlToMe()">Assign</button>
+  <button type="button" class="btn btn-link" (click)="assignUrlToMe()" *ngIf='!url.assignee; else assignUrlToOpenTemplate'>Assign To Me</button>
+  <ng-template #assignUrlToOpenTemplate>
+    <button type="button" class="btn btn-link" id="assignUrlToOpenButton" (click)="assignUrlToOpen()">Assign To Open</button>
+  </ng-template>
+  
 </div>
 <div class="row">
   <div class="col-12">

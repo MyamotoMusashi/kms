@@ -8,7 +8,6 @@ module.exports = function (app, db) {
 			db.query(`SELECT * FROM urls_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results)
-				console.log('it works')
 			})
 		}
 		else{
@@ -36,10 +35,18 @@ module.exports = function (app, db) {
 
 	app.put('/api/urls/:id', (req, res) => {
 		if(req.query.assignee){
-			db.query(`UPDATE urls SET assignee = '${req.query.assignee}' WHERE id = ${req.params.id};`, (error, results, fields) => {
-				if (error) console.log(error)
-				res.json(results)
-			})
+			if(req.query.assignee == 'gdragnev'){
+				db.query(`UPDATE urls SET assignee = '${req.query.assignee}' WHERE id = ${req.params.id};`, (error, results, fields) => {
+					if (error) console.log(error)
+					res.json(results)
+				})
+			}
+			else {
+				db.query(`UPDATE urls SET assignee = NULL WHERE id = ${req.params.id};`, (error, results, fields) => {
+					if (error) console.log(error)
+					res.json(results)
+				})
+			}
 		}
 		else {
 			let title = db.escape(req.body.title)

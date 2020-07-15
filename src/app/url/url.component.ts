@@ -70,7 +70,16 @@ export class UrlComponent implements OnInit {
 
   assignUrlToMe(){
     const id = this.route.snapshot.paramMap.get('id')
-    this.urlsService.assignUrlToMe(id).subscribe()
+    this.urlsService.assignUrlToMe(id).subscribe(() => {
+      window.location.reload(true)
+    })
+  }
+
+  assignUrlToOpen(){
+    const id = this.route.snapshot.paramMap.get('id')
+    this.urlsService.assignUrlToOpen(id).subscribe(() => {
+      window.location.reload(true)
+    })
   }
 
   onSelected(event){

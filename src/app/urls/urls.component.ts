@@ -34,6 +34,7 @@ export class UrlsComponent implements OnInit {
   getTodayUrls() {
     this.urlsService.getTodayUrls().subscribe(urls => {
       this.urls = urls
+      console.log(urls)
     })
   }
 
