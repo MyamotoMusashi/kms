@@ -56,8 +56,11 @@ export class UrlComponent implements OnInit {
   addActionStepToHistoryByUrlId() {
     let actionStep = (<HTMLInputElement> document.getElementById(`addActionStepToHistoryInput`)).value
     const id = this.route.snapshot.paramMap.get('id')
-    this.urlsService.addActionStepToHIstoryByUrlId(actionStep, id).subscribe()
+    this.urlsService.addActionStepToHIstoryByUrlId(actionStep, id).subscribe(() => {
+      window.location.reload(true)
+    })
   }
+  
   getNextActionStepsByUrlId(id){
     this.urlsService.getNextActionStepsByUrlId(id).subscribe(data => {
       this.nextActionSteps = data
