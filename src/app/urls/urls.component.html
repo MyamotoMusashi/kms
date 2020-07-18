@@ -1,14 +1,24 @@
 <div class="row">
-      <ul class="list-unstyled list-group list-group-flush">
-            <li *ngFor='let url of urls' class="list-group-item">
-                  <article>
-                        <p><b>id:</b> <a href="/urls/{{url.id}}">{{url.id}}</a></p>
-                        <p><b>url:</b> <a href="{{url.url}}"> {{url.url}}</a></p>
-                        <p><b>title:</b> {{url.title}}</p>
-                        <p><b>issue:</b> {{url.issue}}</p>
-                        <p><b>resolution:</b> {{url.resolution}}</p>
-                        <p><b>nextActionSteps</b> {{url.nextActionSteps}}</p>
-                  </article>
-            </li>
-      </ul>
+      <table class="table table-hover table-sm col-12">
+            <thead>
+                  <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Issue</th>
+                        <th scope="col">Resolution</th>
+                        <th scope="col">NextActionSteps</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor='let url of urls'>
+                        <th scope="row"><a href="/urls/{{url.id}}">{{url.id}}</a></th>
+                        <td><a href="{{url.url}}">{{url.url}}</a></td>
+                        <td>{{url.title}}</td>
+                        <td>{{url.issue}}</td>
+                        <td>{{url.resolution}}</td>
+                        <td>{{url.nextActionSteps}}</td>
+                  </tr>
+            </tbody>
+      </table>
 </div>

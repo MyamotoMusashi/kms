@@ -1,13 +1,16 @@
-
 <div class="row">
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editUrlModal">Edit Url</button>
-  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editResolutionModal">Edit Resolution</button>
-  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addActionStepToHistoryModal">Add Action Step to History</button>
-  <button type="button" class="btn btn-link" (click)="assignUrlToMe()" *ngIf='!url.assignee; else assignUrlToOpenTemplate'>Assign To Me</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editResolutionModal">Edit
+    Resolution</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addActionStepToHistoryModal">Add Action
+    Step to History</button>
+  <button type="button" class="btn btn-link" (click)="assignUrlToMe()"
+    *ngIf='!url.assignee; else assignUrlToOpenTemplate'>Assign To Me</button>
   <ng-template #assignUrlToOpenTemplate>
-    <button type="button" class="btn btn-link" id="assignUrlToOpenButton" (click)="assignUrlToOpen()">Assign To Open</button>
+    <button type="button" class="btn btn-link" id="assignUrlToOpenButton" (click)="assignUrlToOpen()">Assign To
+      Open</button>
   </ng-template>
-  
+
 </div>
 <div class="row">
   <div class="col-12">
@@ -16,15 +19,16 @@
 </div>
 <div class="row">
   <div class="col-12">
-      <p><span class="font-weight-bold">Id: </span>{{url.id}}</p>
-      <p><span class="font-weight-bold">Url: </span><a href="{{url.url}}">{{url.url}}</a></p>
-      <p><span class="font-weight-bold">Resolution: </span>{{url.resolution}}</p>
-      <p><span class="font-weight-bold">Date of Creation: </span>{{url.createdAt}}</p>
-      <p><span class="font-weight-bold">Next Action Steps: </span><button type="button" class="btn btn-link" data-toggle="modal" data-target="#completeNextActionStepsModal">{{url.nextActionSteps}}</button></p>
-      <p><span class="font-weight-bold">Action Steps History: </span></p>
-      <ul>
-        <li *ngFor='let i of nextActionSteps'>{{i.nextActionStep}}</li>
-      </ul>
+    <p><span class="font-weight-bold">Id: </span>{{url.id}}</p>
+    <p><span class="font-weight-bold">Url: </span><a href="{{url.url}}">{{url.url}}</a></p>
+    <p><span class="font-weight-bold">Resolution: </span>{{url.resolution}}</p>
+    <p><span class="font-weight-bold">Date of Creation: </span>{{url.createdAt}}</p>
+    <p><span class="font-weight-bold">Next Action Steps: </span><button type="button" class="btn btn-link"
+        data-toggle="modal" data-target="#completeNextActionStepsModal">{{url.nextActionSteps}}</button></p>
+    <p><span class="font-weight-bold">Action Steps History: </span></p>
+    <ul>
+      <li *ngFor='let i of nextActionSteps'>{{i.nextActionStep}}</li>
+    </ul>
   </div>
 </div>
 
@@ -41,34 +45,34 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-12">
-              <label for="urlTitleInput">Title: </label>
-              <input type="text" name="" id="urlTitleInput" [(ngModel)]="url.title">
+            <label for="urlTitleInput">Title: </label>
+            <input type="text" name="" id="urlTitleInput" [(ngModel)]="url.title">
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-              <label for="urlUrlInput">Url: </label>
-              <input type="text" id="urlUrlInput" [(ngModel)]="url.url">
+            <label for="urlUrlInput">Url: </label>
+            <input type="text" id="urlUrlInput" [(ngModel)]="url.url">
           </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <label for="urlIssueIdInput">Issue Id: </label>
-                <input type="text" id="urlIssueIdInput" [(ngModel)]="url.issue_id">
-            </div>
+          <div class="col-12">
+            <label for="urlIssueIdInput">Issue Id: </label>
+            <input type="text" id="urlIssueIdInput" [(ngModel)]="url.issue_id">
           </div>
-          <div class="row">
-              <div class="col-12">
-                  <label for="urlResolutionIdInput">Resolution Id: </label>
-                  <input type="text" id="urlResolutionIdInput" [(ngModel)]="url.resolution_id">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <label for="urlNextActionStepsInput">Next Action Steps:</label>
-                <input type="text" name="" id="urlNextActionStepsInput" [(ngModel)]="url.nextActionSteps">
-              </div>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="urlResolutionIdInput">Resolution Id: </label>
+            <input type="text" id="urlResolutionIdInput" [(ngModel)]="url.resolution_id">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="urlNextActionStepsInput">Next Action Steps:</label>
+            <input type="text" name="" id="urlNextActionStepsInput" [(ngModel)]="url.nextActionSteps">
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -89,24 +93,25 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="row">
-              <div class="col-12">
-                  <div class="ng-autocomplete">
-                      <ng-autocomplete class="form-control" placeHolder="resolutions" [data]="data" [(ngModel)]='url.resolution' [searchKeyword]="keyword" [itemTemplate]="itemTemplate" 
-                          [notFoundTemplate]="notFoundTemplate" (selected)='onSelected($event)'>
-                      </ng-autocomplete>
-                    
-                      <ng-template #itemTemplate let-item>
-                          <a [innerHTML]="item"></a>
+        <div class="row">
+          <div class="col-12">
+            <div class="ng-autocomplete">
+              <ng-autocomplete class="form-control" placeHolder="resolutions" [data]="data" [(ngModel)]='url.resolution'
+                [searchKeyword]="keyword" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                (selected)='onSelected($event)'>
+              </ng-autocomplete>
 
-                      </ng-template>
-                    
-                      <ng-template #notFoundTemplate let-notFound>
-                          <div [innerHTML]="notFound"></div>
-                      </ng-template>    
-                   </div>           
-              </div>
+              <ng-template #itemTemplate let-item>
+                <a [innerHTML]="item"></a>
+
+              </ng-template>
+
+              <ng-template #notFoundTemplate let-notFound>
+                <div [innerHTML]="notFound"></div>
+              </ng-template>
+            </div>
           </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -116,8 +121,8 @@
   </div>
 </div>
 
-<div class="modal fade" id="completeNextActionStepsModal" tabindex="-1" role="dialog" aria-labelledby="completeNextActionStepsModal"
-  aria-hidden="true">
+<div class="modal fade" id="completeNextActionStepsModal" tabindex="-1" role="dialog"
+  aria-labelledby="completeNextActionStepsModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -127,11 +132,11 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="row">
-              <div class="col-12">
-                  <p>{{url.nextActionSteps}}</p>
-              </div>
+        <div class="row">
+          <div class="col-12">
+            <p>{{url.nextActionSteps}}</p>
           </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -141,8 +146,8 @@
   </div>
 </div>
 
-<div class="modal fade" id="addActionStepToHistoryModal" tabindex="-1" role="dialog" aria-labelledby="addActionStepToHistoryModal"
-  aria-hidden="true">
+<div class="modal fade" id="addActionStepToHistoryModal" tabindex="-1" role="dialog"
+  aria-labelledby="addActionStepToHistoryModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -152,12 +157,12 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="row">
-              <div class="col-12">
-                <label for="urlUrlInput"></label>
-                <input type="text" id="addActionStepToHistoryInput" placeholder="Enter Action Step">
-              </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="urlUrlInput"></label>
+            <input type="text" id="addActionStepToHistoryInput" placeholder="Enter Action Step">
           </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -166,4 +171,3 @@
     </div>
   </div>
 </div>
-
