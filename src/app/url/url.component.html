@@ -27,7 +27,9 @@
         data-toggle="modal" data-target="#completeNextActionStepsModal">{{url.nextActionSteps}}</button></p>
     <p><span class="font-weight-bold">Action Steps History: </span></p>
     <ul>
-      <li *ngFor='let i of nextActionSteps'>{{i.nextActionStep}}</li>
+      <li *ngFor='let i of nextActionSteps'>
+        <div [innerHTML]='i.nextActionStep'></div>
+      </li>
     </ul>
   </div>
 </div>
@@ -157,12 +159,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <div class="col-12">
             <label for="urlUrlInput"></label>
-            <input type="text" id="addActionStepToHistoryInput" placeholder="Enter Action Step">
-          </div>
-        </div>
+            <div id="addActionStepToHistoryInput">
+              <p>Enter Action Step</p>
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -170,4 +170,5 @@
       </div>
     </div>
   </div>
+
 </div>

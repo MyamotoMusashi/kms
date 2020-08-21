@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlsService } from '../urls.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as Quill from 'quill';
 
 @Component({
   selector: 'app-url',
@@ -8,22 +9,28 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./url.component.css']
 })
 export class UrlComponent implements OnInit {
-  url = {}
+  url = {};
   nextActionSteps;
-  keyword = 'resolution';  
+  keyword = 'resolution';
   data = [];
+  quill;
 
-  
-
-  constructor(private urlsService: UrlsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private urlsService: UrlsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id')
-    this.getUrlById(id)
-    this.getNextActionStepsByUrlId(id)
-    this.urlsService.getAllResolutions().subscribe(data => {
-      this.data = data.map(resolution => resolution.resolution)
-    })
+    this.quill = new Quill(document.getElementById('addActionStepToHistoryInput'), {
+      theme: 'snow',
+    });
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getUrlById(id);
+    this.getNextActionStepsByUrlId(id);
+    this.urlsService.getAllResolutions().subscribe((data) => {
+      this.data = data.map((resolution) => resolution.resolution);
+    });
   }
 
   getUrlById(id){
@@ -54,11 +61,11 @@ export class UrlComponent implements OnInit {
   }
 
   addActionStepToHistoryByUrlId() {
-    let actionStep = (<HTMLInputElement> document.getElementById(`addActionStepToHistoryInput`)).value
-    const id = this.route.snapshot.paramMap.get('id')
+    const actionStep = this.quill.root.innerHTML;
+    const id = this.route.snapshot.paramMap.get('id');
     this.urlsService.addActionStepToHIstoryByUrlId(actionStep, id).subscribe(() => {
-      window.location.reload(true)
-    })
+      window.location.reload(true);
+    });
   }
   
   getNextActionStepsByUrlId(id){

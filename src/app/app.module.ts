@@ -5,15 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { GoalsComponent } from './goals/goals.component';
-
-import { GoalComponent } from './goal/goal.component';
-import { DailygoalsComponent} from './dailygoals/dailygoals.component'
-import { AddGoalComponent } from './add-goal/add-goal.component';
-import { AddSubGoalComponent } from './add-subgoal/add-subgoal.component';
-import { EditGoalComponent } from './edit-goal/edit-goal.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { GoalsListComponent } from './goals-list/goals-list.component';
 import { IssuesComponent } from './issues/issues.component';
 import { UrlsComponent } from './urls/urls.component';
 import { IssueComponent } from './issue/issue.component';
@@ -26,82 +18,56 @@ import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { TrendComponent } from './trend/trend.component';
 
 const ROUTES = [
   {
-    path: 'goals',
-    component: GoalsComponent
-  },
-  {
-    path: 'goals/daily',
-    component: DailygoalsComponent
-  },
-  {
-    path: 'goals/add',
-    component: AddGoalComponent
-  },
-  {
-    path: 'goals/:id',
-    component: GoalComponent
-  },
-  {
-    path: 'goals/:id/edit',
-    component: EditGoalComponent
-  },
-  {
-    path: 'goals/:id/subGoals/add',
-    component: AddSubGoalComponent
-  },
-  {
     path: 'issues',
-    component: IssuesComponent
+    component: IssuesComponent,
   },
   {
     path: 'issues/:id',
-    component: IssueComponent
+    component: IssueComponent,
   },
   {
     path: 'urls',
-    component: UrlsComponent
+    component: UrlsComponent,
   },
   {
     path: 'urls/:id',
-    component: UrlComponent
+    component: UrlComponent,
   },
   {
     path: 'categories/:id',
-    component: CategoryComponent
+    component: CategoryComponent,
   },
   {
     path: 'resolutions',
-    component: ResolutionsComponent
+    component: ResolutionsComponent,
   },
   {
     path: 'troubleshootings',
-    component: TroubleshootingsComponent
+    component: TroubleshootingsComponent,
   },
   {
-    path:'categories',
-    component:CategoriesComponent
+    path: 'categories',
+    component: CategoriesComponent,
+  },
+  {
+    path: 'trend',
+    component: TrendComponent,
   },
   {
     path: '',
     redirectTo: 'goals',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoalsComponent,
-    DailygoalsComponent,
-    GoalComponent,
-    AddGoalComponent,
-    AddSubGoalComponent,
-    EditGoalComponent,
     NavigationComponent,
-    GoalsListComponent,
     IssuesComponent,
     UrlsComponent,
     IssueComponent,
@@ -112,7 +78,8 @@ const ROUTES = [
     UrlComponent,
     SearchComponent,
     CategoriesComponent,
-    CategoryComponent
+    CategoryComponent,
+    TrendComponent,
   ],
   imports: [
     BrowserModule,
@@ -122,7 +89,6 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES), // Add routes to the app
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

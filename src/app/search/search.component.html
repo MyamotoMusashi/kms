@@ -1,2 +1,17 @@
-<input type="text">
-<button>Search</button>
+<div class="row">
+        <div class="ng-autocomplete col-12">
+        <ng-autocomplete class="form-control" placeHolder="Search for Url" [data]="data"
+          [searchKeyword]="keyword" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+        </ng-autocomplete>
+
+        <ng-template #itemTemplate let-item>
+          <a href="/urls/{{item.id}}">{{item.url}}</a>
+        </ng-template>
+
+        <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+        </ng-template>
+        <button class="btn btn-link">Search</button>
+        <button class="btn btn-link" (click)="Sync()">Sync</button>
+      </div>            
+</div>

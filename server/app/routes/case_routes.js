@@ -1,17 +1,31 @@
 // routes/request_routes.js
 var ObjectID = require('mongodb').ObjectID;
 var path = require('path');
+var fs = require('fs');
+var child = require('child_process');
 
 module.exports = function (app, db) {
-	app.get('/api/urls', (req,res) => {
-		if (req.query.today){
+	app.get('/api/excel', (req, res) => {
+		fs.readFile('C:\\Users\\gdragnev\\Desktop\\aeuoae\\syncplicity.log', 'utf8', function (err, contents) {
+			//let gogo = contents.split(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/)
+			let montents = contents.split("*****")
+			montents.forEach(montent => {
+				let element = montent.split(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/)
+				return element
+			})
+			res.json(montents);
+		});
+	})
+
+	app.get('/api/urls', (req, res) => {
+		if (req.query.today) {
 			db.query(`SELECT * FROM urls_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results)
 			})
 		}
-		else{
-			db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) =>  {
+		else {
+			db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results);
 			})
@@ -19,10 +33,27 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/urls', (req, res) => {
+		let urlEncoded = req.body.url.split('/?url=')[1].split('&data')
+		let urlDecoded = decodeURIComponent(urlEncoded[0])
 		let title = db.escape(req.body.title)
-		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${req.body.url}', ${title}, ${req.body.issueId}, 0);`, (error, results, fields) =>  {
+		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${urlDecoded}', ${title}, ${req.body.issueId}, 0);`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results);
+		})
+	})
+
+	app.put('/api/urls', (req, res) => {
+		let powershell = child.spawn('powershell.exe', ['-NoExit', '-ExecutionPolicy', 'Bypass', '-File', 'C:\\Users\\gdragnev\\Desktop\\aeuoae\\script.ps1'], {
+			detached: true,
+			shell: true
+		})
+		powershell.stdout.on('data', (stdout) => {
+			console.log(stdout.toString())
+
+		})
+		powershell.on('exit', (stdout) => {
+			console.log('exited')
+			powershell.kill()
 		})
 	})
 
@@ -34,8 +65,8 @@ module.exports = function (app, db) {
 	})
 
 	app.put('/api/urls/:id', (req, res) => {
-		if(req.query.assignee){
-			if(req.query.assignee == 'gdragnev'){
+		if (req.query.assignee) {
+			if (req.query.assignee == 'gdragnev') {
 				db.query(`UPDATE urls SET assignee = '${req.query.assignee}' WHERE id = ${req.params.id};`, (error, results, fields) => {
 					if (error) console.log(error)
 					res.json(results)
@@ -51,7 +82,7 @@ module.exports = function (app, db) {
 		else {
 			let title = db.escape(req.body.title)
 			let nextActionSteps = db.escape(req.body.nextActionSteps)
-			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) =>  {
+			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results);
 			})
@@ -84,8 +115,8 @@ module.exports = function (app, db) {
 		})
 	})
 
-	app.get('/api/issues', (req,res) => {
-		db.query("SELECT * FROM issues", (error, results, fields) =>  {
+	app.get('/api/issues', (req, res) => {
+		db.query("SELECT * FROM issues", (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results);
 		})
@@ -106,7 +137,7 @@ module.exports = function (app, db) {
 		})
 	})
 
-	app.put('/api/issues/:id' , (req, res) => {
+	app.put('/api/issues/:id', (req, res) => {
 		let issue = db.escape(req.body.issue)
 		db.query(`UPDATE issues SET id=${req.body.id}, issue=${issue}, issue_hash=md5(issue), tags=\'${req.body.tags}\' WHERE id=${req.body.id};`, (error, results, fields) => {
 			if (error) console.log(error)
@@ -115,7 +146,7 @@ module.exports = function (app, db) {
 	})
 
 	app.get('/api/issues/:id/urls', (req, res) => {
-		id = req.params.id 
+		id = req.params.id
 		db.query(`SELECT * from urls_view WHERE issue_id like ${id}`, (error, results, fields) => {
 			res.json(results)
 		})
@@ -164,7 +195,7 @@ module.exports = function (app, db) {
 	})
 
 	app.get('/api/categories/:id', (req, res) => {
-		db.query(`SELECT * FROM categories WHERE id LIKE ${req.params.id}`, (error,results, fields) => {
+		db.query(`SELECT * FROM categories WHERE id LIKE ${req.params.id}`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results[0])
 		})
@@ -179,12 +210,12 @@ module.exports = function (app, db) {
 	})
 
 	app.get('/api/categories/:id/subCategories', (req, res) => {
-		db.query(`SELECT * FROM categories WHERE parent_category_id LIKE ${req.params.id}`, (error,results, fields) => {
+		db.query(`SELECT * FROM categories WHERE parent_category_id LIKE ${req.params.id}`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)
 		})
 	})
-	
+
 	app.post('/api/categories/:id/subCategories', (req, res) => {
 		let subCategory = db.escape(req.body.subCategory)
 		db.query(`INSERT INTO categories (category, category_hash, parent_category_id) VALUES(LOWER(${subCategory}), md5(LOWER(category)), ${req.params.id});`, (error, results, fields) => {
@@ -194,7 +225,7 @@ module.exports = function (app, db) {
 	})
 
 	app.get('/api/categories/:id/issues', (req, res) => {
-		db.query(`SELECT * FROM issues WHERE category_id LIKE ${req.params.id}`, (error,results, fields) => {
+		db.query(`SELECT * FROM issues WHERE category_id LIKE ${req.params.id}`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)
 		})
@@ -348,10 +379,10 @@ module.exports = function (app, db) {
 				res.send({ 'error': 'An error has occurred' });
 			} else {
 				console.log("task completed");
-				db.collection('requests').update(requestDetails, {$pull: { order: taskID}}, (err, result) => {
-					if (err){
+				db.collection('requests').update(requestDetails, { $pull: { order: taskID } }, (err, result) => {
+					if (err) {
 						console.log(err);
-						res.send({'error': 'An error has occured'});
+						res.send({ 'error': 'An error has occured' });
 					} else {
 						console.log(result);
 						res.send(request);
@@ -482,7 +513,7 @@ module.exports = function (app, db) {
 			}
 		}
 		const request = { $set: data };
-		db.collection('requests').findOneAndUpdate(details, request, {upsert: true, returnOriginal: false}, (err, result) => {
+		db.collection('requests').findOneAndUpdate(details, request, { upsert: true, returnOriginal: false }, (err, result) => {
 			if (err) {
 				res.send({ 'error': 'An error has occurred' });
 			} else {
@@ -495,7 +526,7 @@ module.exports = function (app, db) {
 	app.get('/api/tests', (req, res) => {
 		let report = excel.returnExcel(["gogo", "mogo", "pogo"]);
 		res.attachment('report.xlsx'); // This is sails.js specific (in general you need to set headers)
-    	return res.send(report);
+		return res.send(report);
 	})
 
 	app.get('/api/requests', (req, res) => {
@@ -534,16 +565,16 @@ module.exports = function (app, db) {
 			}
 		});
 	})
-	
-	app.get('*', (req,res) => {
+
+	app.get('*', (req, res) => {
 		res.sendFile(path.join(__dirname, '../../../dist/mean-angular6', 'index.html'));
 	})
-	
-	app.get('/tests', (req,res) => {
+
+	app.get('/tests', (req, res) => {
 		res.sendFile(path.join(__dirname, '../../tests', 'index.html'));
 	})
-	
-	
+
+
 	//app.get('*', (req, res) => {
 	//	res.send("page not found");
 	//});

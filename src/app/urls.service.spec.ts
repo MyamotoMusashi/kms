@@ -5,7 +5,7 @@ import { UrlsService } from './urls.service';
 describe('UrlsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UrlsService]
+      providers: [UrlsService],
     });
   });
 
