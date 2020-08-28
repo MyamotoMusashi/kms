@@ -52,12 +52,11 @@ export class UrlComponent implements OnInit {
   }
 
   editResolutionByUrlId(){
-    console.log(this.url['resolution'])
-    const id = this.route.snapshot.paramMap.get('id')
+    console.log(this.url['resolution']);
+    const id = this.route.snapshot.paramMap.get('id');
     this.urlsService.editResolutionByUrlId(this.url['resolution'], id).subscribe(() => {
-      console.log(this.url['resolution'])
-      //window.location.reload(true)
-    })
+        window.location.reload(true);
+      });
   }
 
   addActionStepToHistoryByUrlId() {

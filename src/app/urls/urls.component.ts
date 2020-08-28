@@ -10,6 +10,7 @@ import { Url } from '../models/url.model';
 })
 export class UrlsComponent implements OnInit {
   urls = [] as Url[];
+  url = new Url();
   issues = [];
 
   constructor(
@@ -44,5 +45,25 @@ export class UrlsComponent implements OnInit {
     this.urlsService.getAllIssues().subscribe((issues) => {
       this.issues = issues;
     });
+  }
+
+  editNextActionSteps(url): void {
+    this.url = url;
+    $('#editNextActionStepsModal').modal('show');
+  }
+
+  editNextActionStepsByUrlId(): void {
+    this.urlsService
+      .editUrlById(
+        this.url.title,
+        this.url.url,
+        this.url.issue_id,
+        this.url.resolution_id,
+        this.url.nextActionSteps,
+        this.url.id
+      )
+      .subscribe(() => {
+        window.location.reload(true);
+      });
   }
 }

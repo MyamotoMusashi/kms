@@ -1,0 +1,4 @@
+implement section for opinion by senior/manager on the nextactionsteps
+section for opinions and review notes from other engineers
+ability to flag something
+ability to flag comment something like confluence
