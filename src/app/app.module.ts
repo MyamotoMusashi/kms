@@ -19,6 +19,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { TrendComponent } from './trend/trend.component';
+import * as $ from 'jquery';
 
 const ROUTES = [
   {

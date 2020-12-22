@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlsService } from '../urls.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { $ } from 'jquery';
 import * as Quill from 'quill';
 
 @Component({

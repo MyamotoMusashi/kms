@@ -3,6 +3,7 @@ var ObjectID = require('mongodb').ObjectID;
 var path = require('path');
 var fs = require('fs');
 var child = require('child_process');
+var request = require('request')
 
 module.exports = function (app, db) {
 	app.get('/api/excel', (req, res) => {
@@ -15,6 +16,54 @@ module.exports = function (app, db) {
 			})
 			res.json(montents);
 		});
+	})
+
+	app.get('/api/postFile', (req, res) => {
+		let auth = Buffer.from('08652d3d-a922-4a41-94d7-4ab0e76d2c6a:7a778f9a-a16a-4ace-abdd-1236ac715b44').toString('base64')
+		const options = {
+			url: 'https://api.syncplicity.com/oauth/token',
+			method: 'POST',
+			headers: {
+				'Authorization': `Basic ${auth}`,
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'Sync-App-Token': 'CwmCQ8ise6MgUW+NtWwj3F3svAdn27M5DUjcVi6zirzTiP2qp/jPgFNrzSvncinp',
+				'access-control-allow-origin': '*'
+			},
+			form: {
+				grant_type: 'client_credentials'
+			}
+		};
+
+		function callback(error, response, body) {
+			console.log(response.statusCode)
+			let token = JSON.parse(body)
+			let options2 = {
+				url: 'https://data.syncplicity.com/v2/mime/files?filepath=gogo.txt',
+				method: 'POST',
+				headers: {
+					'Authorization': `Bearer ${token['access_token']}`,
+					'AppKey': 'CwmCQ8ise6MgUW+NtWwj3F3svAdn27M5DUjcVi6zirzTiP2qp/jPgFNrzSvncinp'
+				},
+				formData: {
+					sessionKey: `Bearer ${token['access_token']}`,
+					virtualFolderId: '10387252',
+					fileData: fs.createReadStream('gogo.txt'),
+					sha256: '16af0577252ea2fc2b73260d8fe6a4e73155e9f83bb234588b561ab01c9bca6b'
+				}
+			}
+
+			request(options2, callback2)
+		}
+
+		function callback2(error, response, body) {
+			console.log(response.statusCode)
+			console.log(body)
+			const file = fs.createWriteStream("file");
+			response.pipe(file)
+		}
+
+		request(options, callback);
+		res.json('hello')
 	})
 
 	app.get('/api/urls', (req, res) => {

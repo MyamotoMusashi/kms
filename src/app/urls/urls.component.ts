@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UrlsService } from '../urls.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Url } from '../models/url.model';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-urls',

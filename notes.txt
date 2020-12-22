@@ -2,3 +2,4 @@ implement section for opinion by senior/manager on the nextactionsteps
 section for opinions and review notes from other engineers
 ability to flag something
 ability to flag comment something like confluence
+ability to work with keybinds to open a ticket resolution (perhaps integrate with Autohot key)
