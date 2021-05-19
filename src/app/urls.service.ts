@@ -42,7 +42,7 @@ export class UrlsService {
     };
 
     return this.http.post<Response>(
-      `http://localhost:8000/api/urls`,
+      `http://localhost:8000/api/urls?source=angular`,
       body,
       options
     );
@@ -52,6 +52,7 @@ export class UrlsService {
     urlTitle: string,
     urlUrl: string,
     urlIssueId,
+    urlIssue,
     urlResolutionId,
     urlNextActionSteps,
     urlId
@@ -60,6 +61,7 @@ export class UrlsService {
       title: urlTitle,
       url: urlUrl,
       issueId: urlIssueId,
+      issue: urlIssue,
       resolutionId: urlResolutionId,
       nextActionSteps: urlNextActionSteps,
     };

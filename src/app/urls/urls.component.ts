@@ -58,6 +58,7 @@ export class UrlsComponent implements OnInit {
       .editUrlById(
         this.url.title,
         this.url.url,
+        this.url.issue,
         this.url.issue_id,
         this.url.resolution_id,
         this.url.nextActionSteps,

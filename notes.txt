@@ -1,5 +1,8 @@
+implement experiance system. (based on the ticket arena code and outcome and other factors exp will be given to the assignee -> the exp will be set by moderator)
+implement automatic points system based on customer (key account, bussiness , free) ticket type (zendesk, sf) (ir, update) 
 implement section for opinion by senior/manager on the nextactionsteps
 section for opinions and review notes from other engineers
 ability to flag something
 ability to flag comment something like confluence
 ability to work with keybinds to open a ticket resolution (perhaps integrate with Autohot key)
+ability to receive alerts when ticket was in pending status and its about to be closed so i can send invite

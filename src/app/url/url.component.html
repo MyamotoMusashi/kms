@@ -76,6 +76,25 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="ng-autocomplete">
+            <ng-autocomplete class="form-control" placeHolder="resolutions" [data]="issues" [(ngModel)]='url.issue'
+              [searchKeyword]="keyword2" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+              (selected)='onIssueItemsSelected($event)'>
+            </ng-autocomplete>
+
+            <ng-template #itemTemplate let-item>
+              <a [innerHTML]="item"></a>
+
+            </ng-template>
+
+            <ng-template #notFoundTemplate let-notFound>
+              <div [innerHTML]="notFound"></div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)='editUrlById()'>Edit</button>

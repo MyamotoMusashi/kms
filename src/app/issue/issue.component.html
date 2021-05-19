@@ -2,6 +2,7 @@
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">Add Url</button>
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addTroubleshootingModal">Add Troubleshooting</button>
   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#editIssueModal">Edit Issue</button>
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#referenceUrlModal">Reference Url</button>
 </div>
 <div class="row">
   <div class="col-12">
@@ -51,23 +52,22 @@
 </div>
 
 <!-- Add Url Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="referenceUrlModal" tabindex="-1" role="dialog" aria-labelledby="referenceUrlModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Url</h5>
+        <h5 class="modal-title" id="referenceUrlLabel">Add Url</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <input type="text" name="" id="urlInput" placeholder="enter url">
-        <input type="text" name="" id="urlTitleInput" placeholder="enter title">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)='addUrl()'>Add</button>
+        <button type="button" class="btn btn-primary" (click)='referenceUrl()'>Reference</button>
       </div>
     </div>
   </div>
@@ -90,6 +90,29 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)='addTroubleshooting()'>Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reference Url Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Url</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="" id="urlInput" placeholder="enter url">
+        <input type="text" name="" id="urlTitleInput" placeholder="enter title">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='addUrl()'>Add</button>
       </div>
     </div>
   </div>

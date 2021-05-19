@@ -74,7 +74,7 @@ module.exports = function (app, db) {
 			})
 		}
 		else {
-			db.query("SELECT * FROM urls_view ORDER BY resolution", (error, results, fields) => {
+			db.query("SELECT * FROM urls_view ORDER BY resolution<'pending resolution', resolution", (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results);
 			})
@@ -82,8 +82,16 @@ module.exports = function (app, db) {
 	})
 
 	app.post('/api/urls', (req, res) => {
-		let urlEncoded = req.body.url.split('/?url=')[1].split('&data')
-		let urlDecoded = decodeURIComponent(urlEncoded[0])
+		res.setHeader('Access-Control-Allow-Origin', 'localhost');
+		let source = req.query.source
+		let urlDecoded
+
+		if (source === 'powershell') {
+			let urlEncoded = req.body.url.split('/?url=')[1].split('&data')
+			urlDecoded = decodeURIComponent(urlEncoded[0])
+		}
+		else urlDecoded = req.body.url
+
 		let title = db.escape(req.body.title)
 		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${urlDecoded}', ${title}, ${req.body.issueId}, 0);`, (error, results, fields) => {
 			if (error) console.log(error)
@@ -92,7 +100,8 @@ module.exports = function (app, db) {
 	})
 
 	app.put('/api/urls', (req, res) => {
-		let powershell = child.spawn('powershell.exe', ['-NoExit', '-ExecutionPolicy', 'Bypass', '-File', 'C:\\Users\\gdragnev\\Desktop\\aeuoae\\script.ps1'], {
+		res.setHeader('Access-Control-Allow-Origin', 'localhost');
+		let powershell = child.spawn('powershell.exe', ['-NoExit', '-ExecutionPolicy', 'Bypass', '-File', 'C:\\Users\\SPIRE\\Desktop\\aeuoae\\script.ps1'], {
 			detached: true,
 			shell: true
 		})
@@ -131,10 +140,17 @@ module.exports = function (app, db) {
 		else {
 			let title = db.escape(req.body.title)
 			let nextActionSteps = db.escape(req.body.nextActionSteps)
-			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', issue_id = ${req.body.issueId}, resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) => {
+			let issue = db.escape(req.body.issue)
+			let id = req.params.id
+			console.log(id)
+			console.log(issue)
+			db.query(`call updateIssue(${issue}, ${id})`, (error, results, fields) => {
+				if (error) console.log(error)
+			})
+			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results);
-			})
+			})	
 		}
 	})
 
@@ -252,6 +268,7 @@ module.exports = function (app, db) {
 
 	app.put('/api/categories/:id', (req, res) => {
 		let category = db.escape(req.body.category)
+
 		db.query(`UPDATE categories SET category=LOWER(${category}), category_hash=md5(category), parent_category_id=${req.body.parentCategoryId} WHERE id=${req.params.id};`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results)

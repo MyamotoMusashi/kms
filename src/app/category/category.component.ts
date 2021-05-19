@@ -50,10 +50,9 @@ export class CategoryComponent implements OnInit {
 
  editCategory(){
   let editCategoryInput = (<HTMLInputElement>document.getElementById('editCategoryInput')).value,
-  editCategoryParentIdInput = (<HTMLInputElement>document.getElementById('editCategoryParentIdInput')).value
+  editCategoryParentIdInput = (<HTMLInputElement>document.getElementById('editCategoryParentIdInput')).value || null
   this.urlService.editCategoryById(this.categoryId, editCategoryInput, editCategoryParentIdInput).subscribe(() => {
     window.location.reload()
   })
  }
-
 }

@@ -1,4 +1,0 @@
-Storage Connector:
-
-Q:does storage connector node needs backup before restarting the node?
-A:
