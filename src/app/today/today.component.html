@@ -1,0 +1,49 @@
+<div class="row">
+  <table class="table table-hover table-sm col-12 table-bordered table-striped">
+        <thead class="thead-dark">
+              <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Url</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">NextActionSteps</th>
+                    <th scope="col">Points</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor='let url of urls'>
+                    <th scope="row"><a href="/urls/{{url.id}}">{{url.id}}</a></th>
+                    <td><span class='badge' [ngClass]="{'badge-danger': (url.status === 'Open'), 'badge-warning': (url.status === 'New'), 'badge-primary': url.status === 'Pending Customer', 'badge-info': url.status === 'Pending R&D'}">{{url.status}}</span></td>
+                    <td><a href="{{url.url}}">{{url.url}}</a></td>
+                    <td>{{url.title}}</td>
+                    <td><button class="btn btn-link" (click)='editNextActionSteps(url)'>{{url.nextActionSteps}}</button></td>
+                    <td>{{url.points}}</td>
+              </tr>
+        </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="editNextActionStepsModal" tabindex="-1" role="dialog"
+aria-labelledby="editNextActionStepsModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="editNextActionStepsModalLabel">Edit Next Action Step</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" [value]='url.nextActionSteps' [(ngModel)]='url.nextActionSteps'>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" (click)='editNextActionStepsByUrlId()'>Edit</button>
+  </div>
+</div>
+</div>
+</div>
