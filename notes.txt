@@ -1,3 +1,7 @@
+implement points column -> points will be entered manually first -> later automatic points will be added
+implement status codes -> new; open; pending customer; pending r&d; pending closure; solved;
+sort today's ticket by the points
+implement email feed -> collect all emails from outlook
 implement experiance system. (based on the ticket arena code and outcome and other factors exp will be given to the assignee -> the exp will be set by moderator)
 implement automatic points system based on customer (key account, bussiness , free) ticket type (zendesk, sf) (ir, update) 
 implement section for opinion by senior/manager on the nextactionsteps

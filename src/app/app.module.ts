@@ -20,6 +20,7 @@ import { CategoryComponent } from './category/category.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { TrendComponent } from './trend/trend.component';
 import * as $ from 'jquery';
+import { TodayComponent } from './today/today.component';
 
 const ROUTES = [
   {
@@ -37,6 +38,10 @@ const ROUTES = [
   {
     path: 'urls/:id',
     component: UrlComponent,
+  },
+  {
+    path: 'today',
+    component: TodayComponent
   },
   {
     path: 'categories/:id',
@@ -81,6 +86,7 @@ const ROUTES = [
     CategoriesComponent,
     CategoryComponent,
     TrendComponent,
+    TodayComponent,
   ],
   imports: [
     BrowserModule,

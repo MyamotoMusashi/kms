@@ -68,7 +68,7 @@ module.exports = function (app, db) {
 
 	app.get('/api/urls', (req, res) => {
 		if (req.query.today) {
-			db.query(`SELECT * FROM urls_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
+			db.query(`SELECT * FROM today_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results)
 			})
