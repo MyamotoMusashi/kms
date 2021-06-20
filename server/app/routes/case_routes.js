@@ -66,19 +66,26 @@ module.exports = function (app, db) {
 		res.json('hello')
 	})
 
+	app.get('/api/today', (req, res) => {
+		db.query(`SELECT * FROM today_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results);
+		})
+	})
+
+	app.put('/api/today', (req,res) => {
+		res.setHeader('Access-Control-Allow-Origin', 'localhost');
+		db.query(`UPDATE today SET points=${req.body.points} WHERE url_id = ${req.body.urlId}`, (error,results, fields) => {
+			if (error) console.log(error)
+			res.json(results);
+		})
+	})
+
 	app.get('/api/urls', (req, res) => {
-		if (req.query.today) {
-			db.query(`SELECT * FROM today_view WHERE assignee = 'gdragnev';`, (error, results, fields) => {
-				if (error) console.log(error)
-				res.json(results)
-			})
-		}
-		else {
-			db.query("SELECT * FROM urls_view ORDER BY resolution<'pending resolution', resolution, id DESC", (error, results, fields) => {
-				if (error) console.log(error)
-				res.json(results);
-			})
-		}
+		db.query("SELECT * FROM urls_view ORDER BY resolution<'pending resolution', resolution, id DESC", (error, results, fields) => {
+			if (error) console.log(error)
+			res.json(results);
+		})
 	})
 
 	app.post('/api/urls', (req, res) => {

@@ -23,7 +23,7 @@ export class UrlsService {
   }
 
   getTodayUrls(): Observable<Url[]> {
-    return this.http.get<Url[]>(`http://localhost:8000/api/urls?today=''`);
+    return this.http.get<Url[]>(`http://localhost:8000/api/today`);
   }
 
   getUrlById(id): Observable<Response> {

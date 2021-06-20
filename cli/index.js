@@ -5,6 +5,29 @@ const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers');
 
 yargs(hideBin(process.argv))
+  .command('set-points <urlId', 'sets point of url in today queue', (yargs) => {
+	return yargs
+	  .positional('urlId', {
+		  describe: 'url id'
+	  })
+	  .option('p', {
+        alias: 'points',
+        demandOption: true,
+        describe: 'points of the url',
+        type: 'number'
+    })
+  }, (argv) => {
+	let newUrlData = {
+		urlId: argv.urlId,
+		points: argv.points
+	}
+	axios.put(`http://localhost:8000/api/today`, newUrlData)
+	.then(response => {
+		console.log(response.data)
+	}).catch(error => {
+		console.log(error);
+	})
+  })
   .command('list-urls <range>', 'list urls', (yargs) => {
     return yargs
       .positional('range', {
@@ -24,7 +47,7 @@ yargs(hideBin(process.argv))
 	}
 	else {
 		if (argv.range === 'today') {
-			axios.get('http://localhost:8000/api/urls?today=null')
+			axios.get('http://localhost:8000/api/today')
 			.then(response => {
 				console.dir(response.data, {'maxArrayLength': null})
 			})
