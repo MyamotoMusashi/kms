@@ -74,7 +74,7 @@ module.exports = function (app, db) {
 			})
 		}
 		else {
-			db.query("SELECT * FROM urls_view ORDER BY resolution<'pending resolution', resolution", (error, results, fields) => {
+			db.query("SELECT * FROM urls_view ORDER BY resolution<'pending resolution', resolution, id DESC", (error, results, fields) => {
 				if (error) console.log(error)
 				res.json(results);
 			})
@@ -125,32 +125,48 @@ module.exports = function (app, db) {
 	app.put('/api/urls/:id', (req, res) => {
 		if (req.query.assignee) {
 			if (req.query.assignee == 'gdragnev') {
-				db.query(`UPDATE urls SET assignee = '${req.query.assignee}' WHERE id = ${req.params.id};`, (error, results, fields) => {
+				db.query(`INSERT INTO today(url_id, assignee) VALUES(${req.params.id}, '${req.query.assignee}')`, (error, results, fields) => {
 					if (error) console.log(error)
 					res.json(results)
 				})
 			}
 			else {
-				db.query(`UPDATE urls SET assignee = NULL WHERE id = ${req.params.id};`, (error, results, fields) => {
+				db.query(`DELETE FROM today WHERE url_id = ${req.params.id};`, (error, results, fields) => {
 					if (error) console.log(error)
 					res.json(results)
 				})
 			}
 		}
 		else {
-			let title = db.escape(req.body.title)
-			let nextActionSteps = db.escape(req.body.nextActionSteps)
-			let issue = db.escape(req.body.issue)
-			let id = req.params.id
-			console.log(id)
-			console.log(issue)
-			db.query(`call updateIssue(${issue}, ${id})`, (error, results, fields) => {
-				if (error) console.log(error)
-			})
-			db.query(`UPDATE urls SET title = ${title}, url = '${req.body.url}', resolution_id = ${req.body.resolutionId}, nextActionSteps = ${nextActionSteps} WHERE id = ${req.params.id};`, (error, results, fields) => {
-				if (error) console.log(error)
-				res.json(results);
-			})	
+			if(typeof req.body.title !== 'undefined' || typeof req.body.nextActionSteps !== 'undefined' || typeof issue !== 'undefined'){
+				let query = "UPDATE urls SET"
+				if (typeof req.body.title !== 'undefined') {
+					let title = db.escape(req.body.title)
+					query = query + '  title = ' + title + ','
+				}
+				if (typeof req.body.nextActionSteps !== 'undefined') {
+					let nextActionSteps = db.escape(req.body.nextActionSteps)
+					query = query + ' nextActionSteps = ' + nextActionSteps + ','
+				}
+				if (typeof req.body.issue !== 'undefined') {
+					let issue = db.escape(req.body.issue)
+					db.query(`call updateIssue(${issue}, ${req.params.id})`, (error, results, fields) => {
+						if (error) console.log(error)
+					})
+				}
+				if (typeof req.body.resolutionId !== 'undefined') {
+					query = query + ' resolution_id = ' + req.body.resolutionId + ','
+				}
+
+				query = query.replace(/,*$/, "") + ' WHERE id = ' + req.params.id
+				db.query(query, (error, results, fields) => {
+					if (error) console.log(error)
+					res.json(results);
+				})
+			}
+			else {
+				req.json('it dont')
+			}
 		}
 	})
 

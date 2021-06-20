@@ -1,6 +1,22 @@
+information about customers -> such as how many surveys and how technical are they -> key accounts environment information -> start with my key accounts
+monitor the tickets of my key accouts
+cli to be called like command mode of vim with : in the web app
+webapp to behave and act like vim shortcuts and have vim insert,command etc mode.. where in insert.. textfield would be enabled, otherwise they would be in disabled mode
+counters like super mario bros -> remaining time of work today / solved tickets (montly or daily?) other important stats at the top
+ability to view emails directly in my tool
+ability to name email updates -> maybe only for tickets in "today" queue?
+ability to cleaneup emails from my server.db after ticket is solved. only leave the named updates
+make it like vim to operate the webpage/cli with :command and hjkl for movement and similar shortcuts
+add reporting section
+add timer
+add scope to urls
+ability to add other work related action to the today queue
+add column for each url how much it would take to complete the next action steps approximately
+add command shell for interacting in the website + so it could be commanded with cmd on your local device -> later we could enable bots or something
+embedd the command shell commands in to the website in a command bar that I would create
 implement points column -> points will be entered manually first -> later automatic points will be added
 implement status codes -> new; open; pending customer; pending r&d; pending closure; solved;
-sort today's ticket by the points
+implement base points that could be manually changed apart from the ones that are added every day
 implement email feed -> collect all emails from outlook
 implement experiance system. (based on the ticket arena code and outcome and other factors exp will be given to the assignee -> the exp will be set by moderator)
 implement automatic points system based on customer (key account, bussiness , free) ticket type (zendesk, sf) (ir, update) 
@@ -10,3 +26,6 @@ ability to flag something
 ability to flag comment something like confluence
 ability to work with keybinds to open a ticket resolution (perhaps integrate with Autohot key)
 ability to receive alerts when ticket was in pending status and its about to be closed so i can send invite
+implement log file analyzer
+write algorithms to analyze logs
+alerting and notification system
