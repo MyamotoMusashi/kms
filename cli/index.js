@@ -99,6 +99,11 @@ yargs(hideBin(process.argv))
 				 alias: 'title',
 				 describe: 'title of url',
 				 type: 'string'
+			 },
+			 's': {
+				 alias: 'status',
+				 describe: 'status of url',
+				 type: 'string'
 			 }
 		 })
 		 .strictOptions(enabled=true)
@@ -111,8 +116,17 @@ yargs(hideBin(process.argv))
 			newUrlData['nextActionSteps'] = argv.nextActionSteps
 		}
 		if (typeof argv.title !== 'undefined') {
+			if(argv.title === "") {
+				argv.title = null
+			}
 			newUrlData['title'] = argv.title
-			console.log(argv.t)
+		}
+
+		if (typeof argv.status !== 'undefined') {
+			if(argv.status === "") {
+				argv.status = null
+			}
+			newUrlData['status'] = argv.status
 		}
 
 		axios.put(`http://localhost:8000/api/urls/${argv.urlId}`, newUrlData)

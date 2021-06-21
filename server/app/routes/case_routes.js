@@ -145,7 +145,7 @@ module.exports = function (app, db) {
 			}
 		}
 		else {
-			if(typeof req.body.title !== 'undefined' || typeof req.body.nextActionSteps !== 'undefined' || typeof issue !== 'undefined'){
+			if(typeof req.body.title !== 'undefined' || typeof req.body.nextActionSteps !== 'undefined' || typeof issue !== 'undefined' || typeof req.body.status !== 'undefined'){
 				let query = "UPDATE urls SET"
 				if (typeof req.body.title !== 'undefined') {
 					let title = db.escape(req.body.title)
@@ -161,6 +161,10 @@ module.exports = function (app, db) {
 						if (error) console.log(error)
 					})
 				}
+				if (typeof req.body.status !== 'undefined') {
+					let status = db.escape(req.body.status)
+					query = query + ' status = ' + status + ','
+				}
 				if (typeof req.body.resolutionId !== 'undefined') {
 					query = query + ' resolution_id = ' + req.body.resolutionId + ','
 				}
@@ -172,7 +176,7 @@ module.exports = function (app, db) {
 				})
 			}
 			else {
-				req.json('it dont')
+				res.json('it dont')
 			}
 		}
 	})
