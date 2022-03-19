@@ -31,6 +31,9 @@ export class SearchComponent implements OnInit {
             midnight = new Date()
             midnight.setHours(26 - currentTime.getHours(), 0 - currentTime.getMinutes(), 0 - currentTime.getSeconds());
             this.remainingTime = `${midnight.getHours()}:${midnight.getMinutes()}:${midnight.getSeconds()} Hours`;
+            if (currentTime.getHours() < 14) {
+              this.remainingTime = "Out Of Office Hours"
+            }
             });
   }
 

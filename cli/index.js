@@ -21,7 +21,7 @@ yargs(hideBin(process.argv))
 		urlId: argv.urlId,
 		points: argv.points
 	}
-	axios.put(`http://localhost:8000/api/today`, newUrlData)
+	axios.put(`http://localhost:8080/api/today`, newUrlData)
 	.then(response => {
 		console.log(response.data)
 	}).catch(error => {
@@ -64,7 +64,7 @@ yargs(hideBin(process.argv))
 		})
 	}, (argv) => {
 		if (typeof argv.urlId !== 'undefined') {
-			axios.put(`http://localhost:8000/api/urls/${argv.urlId}?assignee=gdragnev`)
+			axios.put(`http://localhost:8080/api/urls/${argv.urlId}?assignee=gdragnev`, {})
             .then(response => {
                 console.log(response.data)
             })
@@ -77,7 +77,7 @@ yargs(hideBin(process.argv))
 		  })
 		}, (argv) => {
 			if (typeof argv.urlId !== 'undefined') {
-				axios.put(`http://localhost:8000/api/urls/${argv.urlId}?assignee=null`)
+				axios.put(`http://localhost:8080/api/urls/${argv.urlId}?assignee=null`, {})
 				.then(response => {
 					console.log(response.data)
 				})
@@ -129,7 +129,7 @@ yargs(hideBin(process.argv))
 			newUrlData['status'] = argv.status
 		}
 
-		axios.put(`http://localhost:8000/api/urls/${argv.urlId}`, newUrlData)
+		axios.put(`http://localhost:8080/api/urls/${argv.urlId}`, newUrlData)
 		.then(response => {
 			console.log(response.data)
 		}).catch(error => {

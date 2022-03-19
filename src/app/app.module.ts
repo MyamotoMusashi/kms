@@ -6,31 +6,17 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { IssuesComponent } from './issues/issues.component';
 import { UrlsComponent } from './urls/urls.component';
-import { IssueComponent } from './issue/issue.component';
-import { TroubleshootingsComponent } from './troubleshootings/troubleshootings.component';
 import { ResolutionsComponent } from './resolutions/resolutions.component';
 import { ResolutionComponent } from './resolution/resolution.component';
-import { TroubleshootingComponent } from './troubleshooting/troubleshooting.component';
 import { UrlComponent } from './url/url.component';
 import { SearchComponent } from './search/search.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { CategoryComponent } from './category/category.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { TrendComponent } from './trend/trend.component';
 import * as $ from 'jquery';
 import { TodayComponent } from './today/today.component';
 
 const ROUTES = [
-  {
-    path: 'issues',
-    component: IssuesComponent,
-  },
-  {
-    path: 'issues/:id',
-    component: IssueComponent,
-  },
   {
     path: 'urls',
     component: UrlsComponent,
@@ -44,20 +30,8 @@ const ROUTES = [
     component: TodayComponent
   },
   {
-    path: 'categories/:id',
-    component: CategoryComponent,
-  },
-  {
     path: 'resolutions',
     component: ResolutionsComponent,
-  },
-  {
-    path: 'troubleshootings',
-    component: TroubleshootingsComponent,
-  },
-  {
-    path: 'categories',
-    component: CategoriesComponent,
   },
   {
     path: 'trend',
@@ -74,17 +48,11 @@ const ROUTES = [
   declarations: [
     AppComponent,
     NavigationComponent,
-    IssuesComponent,
     UrlsComponent,
-    IssueComponent,
-    TroubleshootingsComponent,
     ResolutionsComponent,
     ResolutionComponent,
-    TroubleshootingComponent,
     UrlComponent,
     SearchComponent,
-    CategoriesComponent,
-    CategoryComponent,
     TrendComponent,
     TodayComponent,
   ],

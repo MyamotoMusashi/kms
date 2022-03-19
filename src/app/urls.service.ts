@@ -12,6 +12,10 @@ export class UrlsService {
 
   constructor(private http: HttpClient) {}
 
+  getUrlComments(urlId) {
+    return this.http.get(`http://localhost:8080/api/comments/${urlId}`)
+  }
+
   getAllUrls(): Observable<Url[]> {
     const options = {
       headers: new HttpHeaders({
@@ -19,15 +23,15 @@ export class UrlsService {
       }),
     };
 
-    return this.http.get<Url[]>('http://localhost:8000/api/urls', options);
+    return this.http.get<Url[]>('http://localhost:8080/api/urls', options);
   }
 
   getTodayUrls(): Observable<Url[]> {
-    return this.http.get<Url[]>(`http://localhost:8000/api/today`);
+    return this.http.get<Url[]>(`http://localhost:8080/api/today`);
   }
 
   getUrlById(id): Observable<Response> {
-    return this.http.get<Response>(`http://localhost:8000/api/urls/${id}`);
+    return this.http.get<Response>(`http://localhost:8080/api/urls/${id}`);
   }
 
   addUrl(url: string, issueId: string, title: string): Observable<Response> {
@@ -51,8 +55,6 @@ export class UrlsService {
   editUrlById(
     urlTitle: string,
     urlUrl: string,
-    urlIssueId,
-    urlIssue,
     urlResolutionId,
     urlNextActionSteps,
     urlId
@@ -60,8 +62,6 @@ export class UrlsService {
     const body = {
       title: urlTitle,
       url: urlUrl,
-      issueId: urlIssueId,
-      issue: urlIssue,
       resolutionId: urlResolutionId,
       nextActionSteps: urlNextActionSteps,
     };
@@ -74,7 +74,7 @@ export class UrlsService {
     };
 
     return this.http.put<Response>(
-      `http://localhost:8000/api/urls/${urlId}`,
+      `http://localhost:8080/api/urls/${urlId}`,
       body,
       options
     );
@@ -92,7 +92,7 @@ export class UrlsService {
     };
 
     return this.http.put(
-      `http://localhost:8000/api/urls/${urlId}`,
+      `http://localhost:8080/api/urls/${urlId}`,
       body,
       options
     );
@@ -112,7 +112,7 @@ export class UrlsService {
     };
 
     return this.http.put(
-      `http://localhost:8000/api/urls/${urlId}`,
+      `http://localhost:8080/api/urls/${urlId}`,
       body,
       options
     );
@@ -120,7 +120,7 @@ export class UrlsService {
 
   getNextActionStepsByUrlId(id) {
     return this.http.get(
-      `http://localhost:8000/api/urls/${id}/nextActionSteps`
+      `http://localhost:8080/api/urls/${id}/nextActionSteps`
     );
   }
 
@@ -134,90 +134,14 @@ export class UrlsService {
     };
 
     return this.http.post(
-      `http://localhost:8000/api/urls/${id}/nextActionSteps`,
-      body,
-      options
-    );
-  }
-
-  getAllIssues() {
-    return this.http.get<any[]>('http://localhost:8000/api/issues');
-  }
-
-  getIssueById(id) {
-    return this.http.get(`http://localhost:8000/api/issues/${id}`);
-  }
-
-  getAllInforForIssueById(id) {
-    return this.http.get<any[]>(`http://localhost:8000/api/issues/${id}/urls`);
-  }
-
-  addIssue(issue: string, category: string) {
-    const body = {
-      issue: issue,
-      category: category,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.post(`http://localhost:8000/api/issues`, body, options);
-  }
-
-  editIssueById(issue: any) {
-    const body = {
-      id: issue.id,
-      issue: issue.issue,
-      tags: issue.tags,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.put(
-      `http://localhost:8000/api/issues/${body.id}`,
-      body,
-      options
-    );
-  }
-
-  getAllTroubleshootings() {
-    return this.http.get<any[]>('http://localhost:8000/api/troubleshootings');
-  }
-
-  getAllTroubleshootingsById(id) {
-    return this.http.get<any[]>(
-      `http://localhost:8000/api/troubleshootings/${id}`
-    );
-  }
-
-  addTroubleshootingByIssueId(troubleshooting: string, issueId: string) {
-    const body = {
-      troubleshooting: troubleshooting,
-      issueId: issueId,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.post(
-      `http://localhost:8000/api/troubleshootings`,
+      `http://localhost:8080/api/urls/${id}/nextActionSteps`,
       body,
       options
     );
   }
 
   getAllResolutions() {
-    return this.http.get<any[]>('http://localhost:8000/api/resolutions');
-  }
-
-  getAllResolutionsByIssueId(id) {
-    return this.http.get<any[]>(
-      `http://localhost:8000/api/issues/${id}/resolutions`
-    );
+    return this.http.get<any[]>('http://localhost:8080/api/resolutions');
   }
 
   editResolutionByUrlId(resolution, id) {
@@ -231,94 +155,7 @@ export class UrlsService {
     };
 
     return this.http.put(
-      `http://localhost:8000/api/urls/${body.id}/resolution`,
-      body,
-      options
-    );
-  }
-
-  getAllCategories() {
-    return this.http.get<any[]>('http://localhost:8000/api/categories');
-  }
-
-  getCategoryById(categoryId) {
-    return this.http.get(`http://localhost:8000/api/categories/${categoryId}`);
-  }
-
-  editCategoryById(categoryId, categoryCategory, categoryParentCategoryId) {
-    const body = {
-      category: categoryCategory,
-      parentCategoryId: categoryParentCategoryId,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.put(
-      `http://localhost:8000/api/categories/${categoryId}`,
-      body,
-      options
-    );
-  }
-
-  getAllSubCategoriesByCategoryId(categoryId) {
-    return this.http.get<any[]>(
-      `http://localhost:8000/api/categories/${categoryId}/subCategories`
-    );
-  }
-
-  getAllIssuesByCategoryId(categoryId) {
-    return this.http.get<any[]>(
-      `http://localhost:8000/api/categories/${categoryId}/issues`
-    );
-  }
-
-  addIssueToCategory(issue, categoryId) {
-    const body = {
-      issue: issue,
-    };
-
-    const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-
-    return this.http.post(
-      `http://localhost:8000/api/categories/${categoryId}/issues`,
-      body,
-      options
-    );
-  }
-
-  addCategory(category: string) {
-    const body = {
-      category: category,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.post(
-      `http://localhost:8000/api/categories`,
-      body,
-      options
-    );
-  }
-
-  addSubCategory(subCategory: string, parentCategoryId) {
-    const body = {
-      subCategory: subCategory,
-    };
-
-    const options = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    };
-
-    return this.http.post(
-      `http://localhost:8000/api/categories/${parentCategoryId}/subCategories`,
+      `http://localhost:8080/api/urls/${body.id}/resolution`,
       body,
       options
     );

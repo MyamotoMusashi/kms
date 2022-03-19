@@ -13,7 +13,6 @@ export class TodayComponent implements OnInit {
 
   urls = [] as Url[];
   url = new Url();
-  issues = [];
 
   constructor(
     private urlsService: UrlsService,
@@ -36,12 +35,6 @@ export class TodayComponent implements OnInit {
     });
   }
 
-  getAllIssues(): void {
-    this.urlsService.getAllIssues().subscribe((issues) => {
-      this.issues = issues;
-    });
-  }
-
   editNextActionSteps(url): void {
     this.url = url;
     $('#editNextActionStepsModal').modal('show');
@@ -52,8 +45,6 @@ export class TodayComponent implements OnInit {
       .editUrlById(
         this.url.title,
         this.url.url,
-        this.url.issue,
-        this.url.issue_id,
         this.url.resolution_id,
         this.url.nextActionSteps,
         this.url.id

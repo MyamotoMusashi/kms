@@ -3,6 +3,7 @@ import { UrlsService } from '../urls.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { $ } from 'jquery';
 import * as Quill from 'quill';
+import {concatMap} from 'rxjs/operators'
 
 @Component({
   selector: 'app-url',
@@ -15,7 +16,10 @@ export class UrlComponent implements OnInit {
   keyword = 'resolution';
   keyword2 = 'issue';
   data = [];
-  issues = [];
+  commentsData;
+  commentDate = new Date()
+  commentsDataArray;
+  commentDateString;
   quill;
 
   constructor(
@@ -29,35 +33,31 @@ export class UrlComponent implements OnInit {
       theme: 'snow',
     });
     const id = this.route.snapshot.paramMap.get('id');
-    this.getUrlById(id);
+    this.getUrlById(id)
     this.getNextActionStepsByUrlId(id);
     this.urlsService.getAllResolutions().subscribe((data) => {
       this.data = data.map((resolution) => resolution.resolution);
     });
-    this.urlsService.getAllIssues().subscribe((issues) => {
-      this.issues = issues.map((issue) => issue.issue);
-    });
+    this.comments(id)
   }
 
   getUrlById(id){
     this.urlsService.getUrlById(id).subscribe((url) => {
       this.url = url;
-    });
+      console.log(this.url)
+    })
   }
 
   editUrlById(){
     const id = this.route.snapshot.paramMap.get('id')
     const urlTitle = (<HTMLInputElement> document.getElementById('urlTitleInput')).value;
     const urlUrl = (<HTMLInputElement> document.getElementById('urlUrlInput')).value;
-    const urlIssueId = (<HTMLInputElement> document.getElementById('urlIssueIdInput')).value;
     const urlNextActionSteps = (<HTMLInputElement> document.getElementById('urlNextActionStepsInput')).value;
     const urlResolutionId = (<HTMLInputElement>(document.getElementById('urlResolutionIdInput'))).value;
     this.urlsService
       .editUrlById(
         urlTitle,
         urlUrl,
-        urlIssueId,
-        this.url['issue'],
         urlResolutionId,
         urlNextActionSteps,
         id
@@ -112,14 +112,32 @@ export class UrlComponent implements OnInit {
   }
 
   onSelected(event) {
-    console.log(event.resolution);
     this.url['resolution'] = event.resolution;
-    console.log(this.url['resolution']);
   }
 
   onIssueItemSelected(event) {
-    console.log(this.url);
-    console.log(event);
     this.url['issue'] = event.issue;
+  }
+
+  comments(id) {
+    this.urlsService.getUrlById(id).pipe(
+      concatMap((data) => {
+        let urlId = data['url'].match(/[0-9]+/)
+        return this.urlsService.getUrlComments(urlId[0])
+      })
+    ).subscribe(data => {
+      this.commentsData = data;
+      this.commentsData = JSON.parse(this.commentsData)
+      console.log(this.commentsData)
+      this.commentsDataArray = this.commentsData['comments']
+      for(let i = 0; i < this.commentsDataArray.length; i++) {
+        for (let j = 0; j < this.commentsData['users'].length; j++) {
+          if(this.commentsDataArray[i]['author_id'] == this.commentsData['users'][j]['id']){
+            this.commentsDataArray[i]['author_extended'] = this.commentsData['users'][j]
+          }
+        }
+      }
+      this.commentDateString = this.commentDate.toLocaleDateString()
+    })
   }
 }

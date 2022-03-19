@@ -26,6 +26,22 @@
     <p><span class="font-weight-bold">Date of Creation: </span>{{url.createdAt}}</p>
     <p><span class="font-weight-bold">Next Action Steps: </span><button type="button" class="btn btn-link"
         data-toggle="modal" data-target="#completeNextActionStepsModal">{{url.nextActionSteps}}</button></p>
+    <ul class="list-group">
+      <ng-container *ngFor='let comment of commentsDataArray'>
+        <li *ngIf="comment.public" class="text-justify comment mt-4 list-group-item">
+          <article>
+            <h5>{{comment.author_extended.name}} ({{comment.author_extended.email}}) <small>{{comment.created_at | date: 'MMM-d-y HH:mm'}}</small></h5>
+          <div  [innerHTML]='comment.html_body'></div>
+          </article>
+        </li>
+        <li *ngIf="!comment.public" class="text-justify comment mt-4 list-group-item private-comment">
+          <article>
+            <h5>{{comment.author_extended.name}} ({{comment.author_extended.email}}) <small>{{comment.created_at | date: 'MMM-d-y HH:mm'}}</small></h5>
+          <div  [innerHTML]='comment.html_body'></div>
+          </article>
+        </li>
+      </ng-container>
+    </ul>
     <p><span class="font-weight-bold">Action Steps History: </span></p>
     <ul>
       <li *ngFor='let i of nextActionSteps'>
@@ -56,12 +72,6 @@
           <div class="col-12">
             <label for="urlUrlInput">Url: </label>
             <input type="text" id="urlUrlInput" [(ngModel)]="url.url">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <label for="urlIssueIdInput">Issue Id: </label>
-            <input type="text" id="urlIssueIdInput" [(ngModel)]="url.issue_id">
           </div>
         </div>
         <div class="row">

@@ -6,7 +6,6 @@
                         <th scope="col">Status</th>
                         <th scope="col">Url</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Issue</th>
                         <th scope="col">Resolution</th>
                         <th scope="col">NextActionSteps</th>
                   </tr>
@@ -14,10 +13,9 @@
             <tbody>
                   <tr *ngFor='let url of urls'>
                         <th scope="row"><a href="/urls/{{url.id}}">{{url.id}}</a></th>
-                        <td><span class='badge' [ngClass]="{'badge-danger': (url.status === 'Open'), 'badge-warning': (url.status === 'New'), 'badge-primary': url.status === 'Pending Customer', 'badge-info': url.status === 'Pending R&D', 'badge-secondary': url.status === 'Solved'}">{{url.status}}</span></td>
-                        <td><a href="{{url.url}}">{{url.url}}</a></td>
+                        <td><span class='badge' [ngClass]="{'badge-danger': (url.status === 'Open'), 'badge-warning': (url.status === 'New'), 'badge-primary': url.status === 'Pending Customer', 'badge-info': url.status === 'Pending R&D', 'badge-success': url.status === 'Webex', 'badge-secondary': url.status === 'Solved'}">{{url.status}}</span></td>
+                        <td><a href="{{url.url}}?origin=today">{{url.url}}</a></td>
                         <td>{{url.title}}</td>
-                        <td>{{url.issue}}</td>
                         <td>{{url.resolution}}</td>
                         <td><button class="btn btn-link" (click)='editNextActionSteps(url)'>{{url.nextActionSteps}}</button></td>
                   </tr>
