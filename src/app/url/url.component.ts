@@ -127,7 +127,7 @@ export class UrlComponent implements OnInit {
       })
     ).subscribe(data => {
       this.commentsData = data;
-      this.commentsData = JSON.parse(this.commentsData)
+      //this.commentsData = JSON.parse(this.commentsData)
       console.log(this.commentsData)
       this.commentsDataArray = this.commentsData['comments']
       for(let i = 0; i < this.commentsDataArray.length; i++) {

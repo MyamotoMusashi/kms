@@ -115,7 +115,7 @@ module.exports = function (app, db) {
 		else urlDecoded = req.body.url
 
 		let title = db.escape(req.body.title)
-		db.query(`INSERT INTO urls (url, title, issue_id, resolution_id) VALUES ('${urlDecoded}', ${title}, ${req.body.issueId}, 0);`, (error, results, fields) => {
+		db.query(`INSERT INTO urls (url, title, resolution_id) VALUES ('${urlDecoded}', ${title}, 0);`, (error, results, fields) => {
 			if (error) console.log(error)
 			res.json(results);
 		})
